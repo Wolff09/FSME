@@ -1,0 +1,136 @@
+/**************************************************************************************/
+/************************************** MINUTES ***************************************/
+/**************************************************************************************/
+
+#minute-add {
+	// TODO: this is the same as in #addresss-filter -> mixin
+	@extend .padding;
+	margin-bottom: .5em;
+	background: $table-bgcolor;
+	& > a { @include button($turquoise); }
+}
+
+#minutes-list {
+	@include table($table-bgcolor, $yellow,
+		$body-font-color, $norm*0.9);
+
+	th.bool { width: 15%; }
+	th.date { width: 15%; }
+	// th.name { width: 25%; }
+
+	th, td {
+		&.removable { @include hidden(all-phones); }
+		&.xremovable {
+			@include respond("max-width: 575px") {
+				display: none;
+			}
+		}
+	}
+}
+
+#minute-view {
+	@include last-man-standing;
+
+	.top, .meta {
+		background: $white;
+		@include horizontal-padding(1.5em);
+	}
+
+	.meta {
+		@include vertical-padding(.75em);
+		.field {
+			@include row("nested");
+			.head { @include column(3); }
+			.tail { @include column(9); }
+		}
+		.label { @include border-radius(0); }
+	}
+
+	.top {
+		@include vertical-padding(.25em);
+		margin-top: .5em;
+
+		&, p {
+			@include hyphenation;
+			text-align: justify;
+		}
+		.hideclose {
+			display: inline-block;
+			@include hidden(desktop);
+			i.icon-right-dir, i.icon-down-dir { color: #333; font-size: 80%; }
+		}
+		@include respond(all-phones) {
+			.inner, .removable { display: none; }
+			.icon-down-dir { display: none; }
+			&.active {
+				.inner { display: block; }
+				.icon-right-dir { display: none; }
+				.icon-down-dir { display: inline-block; }
+			}
+		}
+		// TODO: tyles for content
+	}
+}
+
+#minute-new {
+	form {
+		padding: 1.5em;
+		background: $white;
+		.field { @include formfield; }
+
+		ul.util-buttons {
+			@include row("nested");
+			& > li > a { @include button($grey); }
+			&.two > li, & > li { @include column(6); }
+			&.three > li { @include column(4); }
+			&.four > li { @include column(3); }
+			& > li:first-child { margin-left: 0; } // TODO: why does gumy don't do this for us?
+		}
+
+		#smuyou {
+			&, & td, & tr {
+			margin: 0;
+			padding: 0;
+			border: none;
+			}
+		}
+
+		#wtf {
+			display: table;
+			width: 100%;
+			& > div {
+				display: table-row;
+				& > div {
+					display: table-cell;
+					&.link { width: 36px; background: red; }
+				}
+			}
+		}
+
+		#top-widget {
+			display: table;
+			width: 100%;
+			.field { display: table-cell; input { width: 100%; }}
+			a {
+				@include button($grey);
+				display: table-cell;
+				width: height-calc($norm);
+				@include line-and-height(height-calc($norm));
+				// adjusting border stuff
+				// darken($default-color, 10%); => gumby input field border
+				&:first-of-type { border-left: none; }
+				border-right-style: hidden;
+				border-left-style: hidden;
+				border-top: 1px solid darken($default-color, 10%);
+				border-bottom: 1px solid darken($default-color, 10%);
+				&:last-child { border-right: 1px solid darken($default-color, 10%); }
+			}
+  			margin-bottom: 10px; // hardcoded as in Gumby
+		}
+
+		#save {
+			margin-top: 1em;
+			@include button($turquoise);
+		}
+	}
+}

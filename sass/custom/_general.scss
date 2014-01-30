@@ -1,0 +1,93 @@
+/**************************************************************************************/
+/************************************** GENERALS **************************************/
+/**************************************************************************************/
+
+@mixin last-man-standing($type: "padding") {
+	#{$type}-bottom: $gutter;
+}
+
+@mixin button($color) {
+	@extend .btn, .primary, .medium;
+	background: $color;
+	border-color: $color;
+	@include color-of($color);
+	&:hover {
+		@include bg-hover-of($color);
+		// color as funtion not include
+	}
+	// TODO: remove :hover border
+	width: 100%;
+	cursor: pointer;
+}
+
+@mixin vertical-padding($value) {
+	padding-top: $value;
+	padding-bottom: $value;
+}
+@mixin horizontal-padding($value) {
+	padding-left: $value;
+	padding-right: $value;
+}
+
+@mixin vertical-margin($value) {
+	margin-top: $value;
+	margin-bottom: $value;
+}
+@mixin horizontal-margin($value) {
+	margin-left: $value;
+	margin-right: $value;
+}
+
+.padding-top { padding-top: $small; }
+.padding-bottom { padding-bottom: $small; }
+.padding-left { padding-left: $small; }
+.padding-right { padding-right: $small; }
+.padding-vertical { @extend .padding-top, .padding-bottom; }
+.padding-horizontal { @extend .padding-left, .padding-right; }
+.padding { @extend .padding-horizontal, .padding-vertical; }
+
+@mixin table($bg, $hover, $font-color, $font-size) {
+	// TODO: defaults for vars
+	display: table; @extend table;
+	.tr { display: table-row; @extend tr; }
+	.td { display: table-cell; @extend td; }
+	.th { display: table-cell; @extend th; }
+	.thead { display: table-header-group; @extend thead; }
+	.tbody { display: table-row-group; @extend tbody; }
+
+	.td.center, .th.center { text-align: center; }
+	.td.left, .th.left { text-align: left; }
+	.td.right, .th.right { text-align: right; }
+
+	.thead .th {
+		background: $bg;
+		@include color-of($bg);
+		@include line-and-height(height-calc($med));
+		// TODO: border-bottom: 1px solid $table-border-color;
+	}
+	.tbody .tr {
+		background: $bg;
+		.td {
+			@include font-size($font-size);
+			font-weight: $font-weight-regular;
+			color: $font-color;
+		}
+	}
+	.tbody .tr:hover .td {
+		background: $hover;
+		@include color-of($hover);
+	}
+}
+
+@mixin formfield() {
+	@include row("nested");
+	label {
+		@include column(3);
+		@include line-and-height(height-calc($norm));
+	}
+	input, textarea {
+		@include column(9);
+		@extend .input;
+	}
+	textarea { @extend .textarea; }
+}

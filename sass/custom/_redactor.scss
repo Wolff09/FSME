@@ -27,8 +27,8 @@ body .redactor_box_fullscreen {
 }
 
 .redactor_box textarea {
-	font-family: Menlo, Monaco, monospace, sans-serif;
-	font-size: 13px;
+	// font-family: Menlo, Monaco, monospace, sans-serif;
+	// font-size: 13px;
 	overflow: auto;
 	resize: none;
 	margin: 0;
@@ -258,12 +258,13 @@ body .redactor_box_fullscreen {
 	list-style: none !important;
 	font-size: 0;
 	background: #f1f1f1;
-	background: -moz-linear-gradient(top,  #f1f1f1 0%, #e2e2e2 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1f1f1), color-stop(100%,#e2e2e2));
-	background: -webkit-linear-gradient(top,  #f1f1f1 0%,#e2e2e2 100%);
-	background: -o-linear-gradient(top,  #f1f1f1 0%,#e2e2e2 100%);
-	background: -ms-linear-gradient(top,  #f1f1f1 0%,#e2e2e2 100%);
-	background: linear-gradient(to bottom,  #f1f1f1 0%,#e2e2e2 100%);
+	// background: $lightgrey;
+	// background: -moz-linear-gradient(top,  #f1f1f1 0%, #e2e2e2 100%);
+	// background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1f1f1), color-stop(100%,#e2e2e2));
+	// background: -webkit-linear-gradient(top,  #f1f1f1 0%,#e2e2e2 100%);
+	// background: -o-linear-gradient(top,  #f1f1f1 0%,#e2e2e2 100%);
+	// background: -ms-linear-gradient(top,  #f1f1f1 0%,#e2e2e2 100%);
+	// background: linear-gradient(to bottom,  #f1f1f1 0%,#e2e2e2 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#e2e2e2',GradientType=0 );
 	overflow: hidden !important;
 	height: 32px !important;

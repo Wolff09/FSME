@@ -1,0 +1,55 @@
+/**************************************************************************************/
+/************************************* NAVIGATION *************************************/
+/**************************************************************************************/
+
+$nav-height: 70px !default;
+$nav-height-mobile: 70px !default;
+$nav-background: $turquoise !default;
+$nav-font-family: $font-family !default;
+
+@mixin nav-button($height: $nav-height) {
+	background: $nav-background;
+	&:hover { @include bg-hover-of($nav-background); }
+	border: none;
+	border-left: 1px solid $body-background;
+	font-family: $nav-font-family;
+	@include light-color-of($nav-background);
+	height: $height;
+	line-height: $height;
+	@include border-radius(0);
+	@include text-shadow(none);
+}
+
+#nav {
+	// TODO: mobile menu -> img not vertically centered
+	margin-top: $nav-distance;
+	background: $nav-background;
+	@include light-color-of($nav-background);
+
+	// everything needs some love...
+	h1 { padding: 0 10px; }
+
+	&, & h1, & a, & li {
+		min-height: $nav-height;
+		line-height: $nav-height;
+	}
+
+	ul {
+		background: inherit;
+		@include box-shadow(none); // this is metro style!
+		@include respond(all-phones) { margin-top: 1px; } // vertical seperation for mobile dropdown menu
+
+		li a, li:hover a {
+			@include nav-button();
+			@include respond(all-phones) { border-left: none; } // no horizontal separation for mobile menu
+		}
+	}
+
+	// the mobile menu button needs some special treatment
+	a.btn {
+		top: 0;
+		right: 0;
+		@include nav-button();
+		width: $nav-height + 10px;
+	}	
+}
