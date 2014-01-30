@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block extra_style %}
+{% endblock extra_style %}
+
+{% block extra_js %}
+<script src="/static/js/redactor.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.redactor').redactor({
+			autoresize: false,
+			minHeight: 400,
+			buttons: ['bold', 'italic', 'deleted', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', '|', 'image', 'table', 'link', '|', 'alignment']
+		});
+	});
+</script>
+{% endblock extra_js %}
+
+{% block body %}
+	<div id="minute-new" class="row">
+		<h1>Protokoll bearbeiten</h1>
+		<form>
+			<h3>Meta</h3>
+			<div class="field">
+				<label for="date">Sitzungsdatum</label>
+				<input id="date" type="date" />
+			</div>
+			<div class="field">
+				<label for="writer">Protokollant</label>
+				<input id="writer" type="text" />
+			</div>
+			<div class="field">
+				<label for="leader">Sitzungsleitung</label>
+				<input id="leader" type="text" />
+			</div>
+			<div class="field">
+				<label for="cando">Beschlussfähig</label>
+				<input id="cando" type="text" />
+			</div>
+			<div class="field">
+				<label for="fsr">Anwesenheit</label>
+				<input id="fsr" type="text" />
+			</div>
+			<div class="field">
+				<label for="guest">Gäste</label>
+				<textarea id="guest"></textarea>
+			</div>
+
+			<h3>TOPs</h3>
+			<div class="field">
+				<div class="picker">
+					<select id="choose">
+						<option value="#" disabled>Favorite Doctor…</option>
+						<option>Colin Baker</option>
+						<option>Sylvester McCoy</option>
+						<option>Paul McGann</option>
+						<option>Christopher Eccleston</option>
+						<option>David Tennant</option>
+						<option>Matt Smith</option>
+					</select>
+				</div>
+			</div>
+			<ul class="two util-buttons">
+				<li><a href="#">TOPs neu anordnen</a></li>
+				<li><a href="#">Neuen TOP anlegen</a></li>
+			</ul>
+			<div class="field">
+				<label for="top">Name</label>
+				<input id="top" type="text" />
+			</div>
+			<textarea class="redactor" name="content"></textarea>
+			<a id="save" href="#">Änderungen speichern</a>
+		</form>
+	</div>
+{% endblock body %}

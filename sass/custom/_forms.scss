@@ -1,0 +1,108 @@
+
+/***********************************************************************/
+/*********************** OVERRIDE GUMBY DEFAULTS ***********************/
+/***********************************************************************/
+
+.field {
+	@include border-radius(0);
+	.input,
+	input,
+	&.prepend .input,
+	&.append .input,
+	&.prepend.append input,
+	&.prepend.append input:first-child,
+	&.prepend.append input:last-child,
+	&.prepend *:first-child,
+	&.append *:last-child {
+		@include border-radius(0);
+	}
+
+	textarea, .textarea {
+		@include transition-property(height);
+  		@include transition-duration(1s);
+		height: height-calc($norm)*1 !important;
+		&:focus { height: height-calc($norm)*4 !important; }
+	}
+
+	input, .input, textarea, .textarea {
+		&:focus { border: 1px solid $turquoise; }
+		&.no-focus:focus { border: none; }
+		&.no-border, &.no-border:focus { border: none; }
+	}
+}
+
+/***********************************************************************/
+/********************* OVERRIDE SELECTIZE DEFAULTS *********************/
+/***********************************************************************/
+
+@mixin selectize-border($color, $positions...) {
+	@each $pos in $positions {
+		border-#{$pos}: 1px solid $color;
+	}
+}
+
+@mixin selectize-color-sheme($default: $form-text-input-stroke, $active: $turquoise) {
+	.selectize-control {
+		// border color
+		.selectize-input {
+			& { @include selectize-border($default, "top", "left", "bottom", "right"); }
+		    &.focus { @include selectize-border($active, "top", "left", "bottom", "right"); }
+		    &.dropdown-active { @include selectize-border($active, "top", "left", "right"); }
+		}
+		.selectize-dropdown {
+			@include selectize-border($active, "left", "bottom", "right");
+		}
+		// selection color/bg
+		.selectize-dropdown {
+			.option, .create {
+				&.active { background: $active; @include color-of($active); }
+				.highlight { background: $active; }
+			}
+		}
+	}
+}
+
+
+.selectize.field {
+	overflow: visible;
+	@include selectize-color-sheme();
+
+	.selectize-control {
+		.selectize-input {
+			height: height-calc($norm);
+			
+			&, &.has-items,  {
+				padding: 0 10px;
+			}
+
+
+		    &, &.dropdown-active {
+		    	@include border-radius(0);
+		    	@include box-shadow(none);
+		    }
+
+		    input, input.text {
+		    	// TODO: too much pixel magic...
+		    	height: height-calc($norm) - 2px; // the border does not belong to the input as usual
+		    	line-height: height-calc($norm) - 2px !important; // Gumby seems to use !important already
+				@include font-size($norm);
+				-webkit-font-smoothing: auto; // use Gumby's hardcoded default
+				color: $black;// TODO: improve this too hard-coded value
+		    }
+		    .item {
+		    	// TODO: too much pixel magic...
+		    	@include line-and-height(height-calc($norm)*0.8);
+		    	@include font-size($norm - 2px);
+		    	@include vertical-margin(height-calc($norm)*0.1); // vertically centered
+		    }
+		}
+
+		.selectize-dropdown {
+			// display: none !important;
+			@include border-radius(0);
+			@include box-shadow(none);
+			.option, .create { @include font-size($norm - 2px); }
+		}
+	}
+
+}

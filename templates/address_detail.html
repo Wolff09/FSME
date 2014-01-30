@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block extra_style %}{% endblock extra_style %}
+
+{% block extra_js %}{% endblock extra_js %}
+
+{% block body %}
+	<div class="row">
+		<h1>{{ firstname }} {{ lastname }}</h1>
+
+		<div id="address-detail" class="row">
+			<div class="row">
+				<div class="four columns key">Vorname:</div>
+				<div class="eight columns value">{{ firstname }}</div>
+			</div>
+			<div class="row">
+				<div class="four columns key">Nachname:</div>
+				<div class="eight columns value">{{ lastname }}</div>
+			</div>
+			<div class="row">
+				<div class="four columns key">eMail:</div>
+				<div class="eight columns value">{{ email }}</div>
+			</div>
+			<div class="row">
+				<div class="four columns key">Telefon:</div>
+				<div class="eight columns value">{{ tele }}</div>
+			</div>
+			<div class="row">
+				<div class="four columns key">Geburtstag:</div>
+				<div class="eight columns value">{{ birthday }}</div>
+			</div>
+			<div class="row">
+				<div class="four columns key">Anschrift:</div>
+				<div class="eight columns value">
+					{{ street }} <br>
+					{{ town }}
+				</div>
+			</div>
+			<div class="row">
+				<div class="four columns key">Sonstiges:</div>
+				<div class="eight columns value">{{ misc }}</div>
+			</div>
+			<div class="row">
+				<div class="four columns key"> QR:</div>
+				<div class="eight columns value">
+					<div href="#" id="qr-code-wrapper" class="toggle" gumby-trigger="#qr-code-wrapper">
+						<img class="figure" src="http://dummyimage.com/100x100/000000/fff.png&text=QR">
+						<div class="caption">[Click to enlarge]</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="four columns key">Tags:</div>
+				<div class="eight columns value">{{ tags|join(", ") }}</div>
+			</div>
+		</div>
+	</div>
+{% endblock body %}

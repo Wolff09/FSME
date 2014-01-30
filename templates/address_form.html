@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block extra_style %}{% endblock extra_style %}
+
+{% block extra_js %}{% endblock extra_js %}
+
+{% block body %}
+	<div class="row">
+		<h1>Vorname Nachname</h1>
+
+		<div id="address-form" class="row">
+			<ul>
+				<li class="field row">
+					<label for="text1">Vorname:</label>
+					<input id="text1" type="text" placeholder="Placeholder..." />
+				</li>
+				<li class="field">
+					<label for="text2">Nachname:</label>
+					<input id="text2" type="text" placeholder="Placeholder..." />
+				</li>
+				<li class="field">
+					<label for="text2">eMail:</label>
+					<input id="text2" type="text" placeholder="Placeholder..." />
+				</li>
+				<li class="field">
+					<label for="text2">Telefon:</label>
+					<input id="text2" type="text" placeholder="Placeholder..." />
+				</li>
+				<li class="field">
+					<label for="text3">Straße:</label>
+					<input id="text3" type="text" placeholder="Placeholder..." />
+				</li>
+				<li class="field">
+					<label for="text4">Postleitzahl:</label>
+					<input id="text4" type="text" placeholder="Placeholder..." />
+				</li>
+				<li class="field">
+					<label for="text5">Ort:</label>
+					<input id="text5" type="text" placeholder="Placeholder..." />
+				</li>
+				<li class="field">
+					<label for="text6">Geburtstag:</label>
+					<input id="text6" type="text" placeholder="Placeholder..." />
+				</li>
+				<li class="field">
+					<label for="text6">Sonstiges:</label>
+					<textarea id="text6" type="text" placeholder="Placeholder..."></textarea/>
+				</li>
+				<li class="field">
+					<label for="text6">Tags:</label>
+					<input id="text6" type="text" placeholder="Placeholder..." />
+				</li>
+			</ul>
+			<div class="row">
+				<a id="save" href="#">Speichern</a>
+			</div>
+		</div>
+	</div>
+{% endblock body %}
