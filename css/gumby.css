@@ -38,11 +38,11 @@ a img { border: none; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
 
-#minute-view .meta .field, #minute-new form .field, #minute-new form ul.util-buttons, #address-form .field { *zoom: 1; }
-#minute-view .meta .field:before, #minute-new form .field:before, #minute-new form ul.util-buttons:before, #address-form .field:before, #minute-view .meta .field:after, #minute-new form .field:after, #minute-new form ul.util-buttons:after, #address-form .field:after { content: ""; display: table; }
-#minute-view .meta .field:after, #minute-new form .field:after, #minute-new form ul.util-buttons:after, #address-form .field:after { clear: both; }
+#minute-view .meta .field, #minute-new form .field, #minute-new form ul.util-buttons, #minute-new form #top-widget, #address-form .field { *zoom: 1; }
+#minute-view .meta .field:before, #minute-new form .field:before, #minute-new form ul.util-buttons:before, #minute-new form #top-widget:before, #address-form .field:before, #minute-view .meta .field:after, #minute-new form .field:after, #minute-new form ul.util-buttons:after, #minute-new form #top-widget:after, #address-form .field:after { content: ""; display: table; }
+#minute-view .meta .field:after, #minute-new form .field:after, #minute-new form ul.util-buttons:after, #minute-new form #top-widget:after, #address-form .field:after { clear: both; }
 
-#minute-view .meta .field .head, #minute-view .meta .field .tail, #minute-new form .field label, #minute-new form .field input, #minute-new form .field textarea, #minute-new form ul.util-buttons.two > li, #minute-new form ul.util-buttons > li, #minute-new form ul.util-buttons.three > li, #minute-new form ul.util-buttons.four > li, #address-form .field label, #address-form .field input, #address-form .field textarea, #address-form #save { margin-left: 2.12766%; float: left; min-height: 1px; position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+#minute-view .meta .field .head, #minute-view .meta .field .tail, #minute-new form .field label, #minute-new form .field input, #minute-new form .field textarea, #minute-new form ul.util-buttons.two > li, #minute-new form ul.util-buttons > li, #minute-new form ul.util-buttons.three > li, #minute-new form ul.util-buttons.four > li, #minute-new form #top-widget a:nth-child(2), #minute-new form #top-widget a:nth-child(3), #minute-new form #top-widget a:nth-child(4), #address-form .field label, #address-form .field input, #address-form .field textarea, #address-form #save { margin-left: 2.12766%; float: left; min-height: 1px; position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 .pull_right { float: right; }
 
@@ -2957,6 +2957,16 @@ body #body-wrapper { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEU
 #minute-new form ul.util-buttons.four > li { width: 23.40426%; }
 @media only screen and (max-width: 767px) { #minute-new form ul.util-buttons.four > li { float: left; margin-left: 0; width: 100%; } }
 #minute-new form ul.util-buttons > li:first-child { margin-left: 0; }
+#minute-new form #top-widget { width: auto; min-width: 0; max-width: none; padding-left: 0; padding-right: 0; }
+#minute-new form #top-widget > *:first-child { margin-left: 0; }
+@media only screen and (max-width: 767px) { #minute-new form #top-widget { width: auto; min-width: 0; margin-left: 0; margin-right: 0; } }
+#minute-new form #top-widget input:nth-child(1) { background: black; }
+#minute-new form #top-widget a:nth-child(2) { width: 6.38298%; background: red; }
+@media only screen and (max-width: 767px) { #minute-new form #top-widget a:nth-child(2) { float: left; margin-left: 0; width: 100%; } }
+#minute-new form #top-widget a:nth-child(3) { width: 6.38298%; background: yellow; }
+@media only screen and (max-width: 767px) { #minute-new form #top-widget a:nth-child(3) { float: left; margin-left: 0; width: 100%; } }
+#minute-new form #top-widget a:nth-child(4) { width: 6.38298%; background: green; }
+@media only screen and (max-width: 767px) { #minute-new form #top-widget a:nth-child(4) { float: left; margin-left: 0; width: 100%; } }
 #minute-new #save { margin-top: 1em; background: #3bbec0; border-color: #3bbec0; color: #000; width: 100%; cursor: pointer; }
 #minute-new #save:hover { background: #4ec4c6; }
 

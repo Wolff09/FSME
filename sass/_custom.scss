@@ -273,6 +273,14 @@ body {
 			&.four > li { @include column(3); }
 			& > li:first-child { margin-left: 0; } // TODO: why does gumy don't do this for us?
 		}
+
+		#top-widget {
+			@include row("nested");
+			input:nth-child(1) { background: black; }
+			a:nth-child(2) { @include column(1); background: red; }
+			a:nth-child(3) { @include column(1); background: yellow; }
+			a:nth-child(4) { @include column(1); background: green; }
+		}
 	}
 
 	#save {
