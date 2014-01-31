@@ -108,24 +108,82 @@
 		}
 
 		#top-widget {
-			display: table;
-			width: 100%;
-			.field { display: table-cell; input { width: 100%; }}
-			a {
-				@include button($grey);
-				display: table-cell;
-				width: height-calc($norm);
-				@include line-and-height(height-calc($norm));
-				// adjusting border stuff
-				// darken($default-color, 10%); => gumby input field border
-				&:first-of-type { border-left: none; }
-				border-right-style: hidden;
-				border-left-style: hidden;
-				border-top: 1px solid darken($default-color, 10%);
-				border-bottom: 1px solid darken($default-color, 10%);
-				&:last-child { border-right: 1px solid darken($default-color, 10%); }
+	  		margin-bottom: 10px; // hardcoded as in Gumby
+			#widget {
+				display: table;
+				width: 100%;
+				& > .field { display: table-cell; input { width: 100%; }}
+				& > .button {
+					$width: height-calc($norm);
+					@include button($grey);
+					display: table-cell;
+					width: $width;
+					@include line-and-height(height-calc($norm));
+					// adjusting border stuff
+					// darken($default-color, 10%); => gumby input field border
+					&:first-of-type { border-left: none; }
+					border-right-style: hidden;
+					border-left-style: hidden;
+					border-top: 1px solid $border-color;
+					border-bottom: 1px solid $border-color;
+					&:last-child { border-right: 1px solid $border-color; }
+					position: relative;
+
+					& > .dropdown {
+						position: absolute;
+						right: 0;
+						width: auto;
+						z-index: 77777;
+						border: 1px solid $border-color;
+						display: none;
+						margin-top: 2px;
+
+						&.push { 
+							&.one { right: -1*$width; }
+							&.two { right: -2*$width; }
+						}
+						& > a {
+							display: block;
+							width: 100%;
+							border: none;
+							white-space: nowrap;
+							font-size: $norm;
+							font-weight: $font-weight-regular;
+							@include line-and-height(height-calc($norm));
+							background-color: $grey;
+							&:hover { background-color: $darkgrey; }
+
+							margin: 0;
+							padding: 0 $norm;
+							text-align: left;
+						}
+					}
+					&:hover > .dropdown {
+						display: block;
+					}
+				}
 			}
-  			margin-bottom: 10px; // hardcoded as in Gumby
+		}
+
+		.request-list {
+			.request {
+				border: 1px solid $border-color;
+				margin-bottom: 10px;
+				@extend .padding;
+				.title { font-weight: bold; }
+				.howmuchisthefish { font-weight: bold; }
+				.description {
+					@include vertical-margin(.2em);
+					@include hyphenation;
+					text-align: justify;
+				}
+				.label {
+					@include border-radius(0);
+					&.accpeted { @extend .success; background: $green; }
+					&.denied { @extend .danger; background: $red; }
+				}
+				.edit { float: right; }
+			}
 		}
 
 		#save {

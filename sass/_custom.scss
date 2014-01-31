@@ -63,6 +63,8 @@ $pastellyellow	: tint($yellow, 30%);
 	// TODO: fallback values
 }
 
+$border-color: darken($default-color, 10%);
+
 /*
 todo: write include "cshade". For given color output bg, color, bg:hover, color:hover
 -> with possibility to turn off setting :hover stuff
@@ -74,7 +76,6 @@ and one for buttons with border -> or customize gumpy buttons?
 // TODO: borken in gumpy? protokol defaults to file instead of http -> check in productive
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700");
 @import "custom/redactor";
-
 
 @import "custom/body";
 @import "custom/general";
