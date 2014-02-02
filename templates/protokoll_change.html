@@ -7,11 +7,18 @@
 <script src="/static/js/redactor.min.js"></script>
 
 <script type="text/javascript">
+	/* TODO:
+	- Den Link dropdown durch einen Einfachen Link Button ersetzen, der die
+	  Funktionalität von "Link einfügen" im Link dropdown hat.
+	- Die Modals von Redactor entfernen und unseren eigenen schreiben, da
+	  wir eh ein Modal für anderes Zeug brauchen
+	*/
 	$(document).ready(function(){
 		$('.redactor').redactor({
+			lang: 'de',
 			autoresize: false,
 			minHeight: 400,
-			buttons: ['bold', 'italic', 'deleted', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', '|', 'image', 'table', 'link', '|', 'alignment']
+			buttons: ['bold', 'italic', 'underline', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', '|', 'link', 'unlink']
 		});
 	});
 </script>
@@ -50,27 +57,21 @@
 
 			<h3>TOPs</h3>
 			<div id="top-widget">
-				<div id="widget">
 					<div class="field"><input type="text" placeholder="Test"></div>
 					<div class="button" href="#">
-						<i class="icon-down-open-big"></i>
-						<div class="push two dropdown">
+						<i class="icon-tools"></i>
+						<div class="dropdown">
 							<a href="#">TOP 2: Mitteilungen</a>
 							<a href="#">TOP 3: Bericht</a>
 							<a href="#">TOP 4: Finanzordnung</a>
 							<a href="#">TOP 5: ...</a>
-						</div>
-					</div>
-					<div class="button" href="#">
-						<i class="icon-plus"></i>
-						<div class="push one dropdown">
+							<hr>
 							<a href="#">Neuen TOP anlegen</a>
 							<a href="#">Neuen Antrag anlegen</a>
+							<hr>
+							<a href="#">TOPs umsortieren</a>
 						</div>
 					</div>
-					<a class="button" href="#"><i class="icon-shuffle"></i></a>
-				</div>
-				<div id="add-dropdown"></div>
 			</div>
 			<textarea class="redactor" name="content"></textarea>
 			<div class="request-list">
@@ -91,6 +92,9 @@
 						Für mehr Usability könnte man beim Erstellen/Bearbeiten die
 						Möglichkeit geben den Antrag zu einem beliebigen TOP hinzuzufügen,
 						und als Default den aktuellen direkt auswählen.
+						<hr>Man könnte auch alle drei buttons oben in einen zusammenlegen
+						und in einem dropdown alle funktionalität anbieten (top auswählen,
+						top/antrag erstellen, tops umsortieren)
 					</div>
 					<span class="success label">Angenommen - 11/2/2</span>
 					<a class="edit" href="#">Bearbeiten</a>

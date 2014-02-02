@@ -1,6 +1,6 @@
-/**************************************************************************************/
-/************************************** MINUTES ***************************************/
-/**************************************************************************************/
+/*****************************************************************************/
+/********************************** MINUTES **********************************/
+/*****************************************************************************/
 
 #minute-add {
 	// TODO: this is the same as in #addresss-filter -> mixin
@@ -29,6 +29,7 @@
 }
 
 #minute-view {
+	// TODO: proper red/green values for labels
 	@include last-man-standing;
 
 	.top, .meta {
@@ -78,111 +79,30 @@
 		background: $white;
 		.field { @include formfield; }
 
-		ul.util-buttons {
-			@include row("nested");
-			& > li > a { @include button($grey); }
-			&.two > li, & > li { @include column(6); }
-			&.three > li { @include column(4); }
-			&.four > li { @include column(3); }
-			& > li:first-child { margin-left: 0; } // TODO: why does gumy don't do this for us?
-		}
-
-		#smuyou {
-			&, & td, & tr {
-			margin: 0;
-			padding: 0;
-			border: none;
-			}
-		}
-
-		#wtf {
-			display: table;
-			width: 100%;
-			& > div {
-				display: table-row;
-				& > div {
-					display: table-cell;
-					&.link { width: 36px; background: red; }
-				}
-			}
-		}
-
 		#top-widget {
 	  		margin-bottom: 10px; // hardcoded as in Gumby
-			#widget {
-				display: table;
-				width: 100%;
-				& > .field { display: table-cell; input { width: 100%; }}
-				& > .button {
-					$width: height-calc($norm);
-					@include button($grey);
-					display: table-cell;
-					width: $width;
-					@include line-and-height(height-calc($norm));
-					// adjusting border stuff
-					// darken($default-color, 10%); => gumby input field border
-					&:first-of-type { border-left: none; }
-					border-right-style: hidden;
-					border-left-style: hidden;
-					border-top: 1px solid $border-color;
-					border-bottom: 1px solid $border-color;
-					&:last-child { border-right: 1px solid $border-color; }
-					position: relative;
+			display: table;
+			width: 100%;
+			& > .field, & > .button { display: table-cell; }
+			& > .field input { width: 100%; }
+			& > .button {
+				// make it look like a button...
+				@include button($grey);
+				// ...and adjust dimension
+				$size: height-calc($norm);
+				@include line-and-height($size);
+				width: $size;
 
-					& > .dropdown {
-						position: absolute;
-						right: 0;
-						width: auto;
-						z-index: 77777;
-						border: 1px solid $border-color;
-						display: none;
-						margin-top: 2px;
+				// no border between two successive buttons
+				border-right-style: hidden;
+				border-left-style: hidden;
+				border-top: 1px solid $border-color;
+				border-bottom: 1px solid $border-color;
+				// first and last button, however, should be delimited
+				&:first-of-type { border-left: none; }
+				&:last-child { border-right: 1px solid $border-color; }
 
-						&.push { 
-							&.one { right: -1*$width; }
-							&.two { right: -2*$width; }
-						}
-						& > a {
-							display: block;
-							width: 100%;
-							border: none;
-							white-space: nowrap;
-							font-size: $norm;
-							font-weight: $font-weight-regular;
-							@include line-and-height(height-calc($norm));
-							background-color: $grey;
-							&:hover { background-color: $darkgrey; }
-
-							margin: 0;
-							padding: 0 $norm;
-							text-align: left;
-						}
-					}
-					&:hover > .dropdown {
-						display: block;
-					}
-				}
-			}
-		}
-
-		.request-list {
-			.request {
-				border: 1px solid $border-color;
-				margin-bottom: 10px;
-				@extend .padding;
-				.title { font-weight: bold; }
-				.howmuchisthefish { font-weight: bold; }
-				.description {
-					@include vertical-margin(.2em);
-					@include hyphenation;
-					text-align: justify;
-				}
-				.label {
-					@include border-radius(0);
-					&.accpeted { @extend .success; background: $green; }
-					&.denied { @extend .danger; background: $red; }
-				}
-				.edit { float: right; }
+				@include dropdown($size);
 			}
 		}
 
@@ -192,3 +112,34 @@
 		}
 	}
 }
+
+.request-list {
+	.request {
+		border: 1px solid $border-color;
+		margin-bottom: 10px;
+		@extend .padding;
+		.title { font-weight: bold; }
+		.howmuchisthefish { font-weight: bold; }
+		.description {
+			@include vertical-margin(.2em);
+			@include hyphenation;
+			text-align: justify;
+		}
+		.label {
+			@include border-radius(0);
+			&.accpeted { @extend .success; background: $green; }
+			&.denied { @extend .danger; background: $red; }
+		}
+		.edit { float: right; }
+	}
+}
+
+// ul.util-buttons {
+// 	@include row("nested");
+// 	& > li > a { @include button($grey); }
+// 	&.two > li, & > li { @include column(6); }
+// 	&.three > li { @include column(4); }
+// 	&.four > li { @include column(3); }
+// TODO: why does gumy don't do this for us?
+// 	& > li:first-child { margin-left: 0; } 
+// }
