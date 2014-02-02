@@ -25,8 +25,57 @@
 {% endblock extra_js %}
 
 {% block body %}
-	<div id="minute-new" class="row">
+	<div id="minute-edit" class="row">
 		<h1>Protokoll bearbeiten</h1>
+
+		<div class="modal" id="linkmodal">
+			<div class="content">
+				<a class="close switch" gumby-trigger="|#linkmodal">
+					<i class="icon-cancel" /></i>
+				</a>
+				<div class="row">
+					<h2>Link einfügen</h2>
+
+					<div class="field">
+						<label for="linkurl">Link</label>
+						<input id="linkurl" type="text">
+					</div>
+					<div class="field">
+						<label for="linktext">Text</label>
+						<input id="linktext" type="text">
+					</div>
+					<a id="addlink" href="#">Link hinzufügen</a>
+				</div>
+			</div>
+		</div>
+		<p class="btn primary medium">
+			<a href="#" class="switch" gumby-trigger="#linkmodal">Link hinzufügen</a>
+		</p>
+
+		<div class="modal" id="requestmodal">
+			<div class="content">
+				<a class="close switch" gumby-trigger="|#requestmodal">
+					<i class="icon-cancel" /></i>
+				</a>
+				<div class="row">
+					<h2>Antrag <span class="add">hinzufügen</span><span class="edit">bearbeiten</span></h2>
+
+					<div class="field">
+						<label for="linkurl">Link</label>
+						<input id="linkurl" type="text">
+					</div>
+					<div class="field">
+						<label for="linktext">Text</label>
+						<input id="linktext" type="text">
+					</div>
+					<a id="addlink" href="#">Link hinzufügen</a>
+				</div>
+			</div>
+		</div>
+		<p class="btn primary medium">
+			<a href="#" class="switch" gumby-trigger="#requestmodal">Antrag hinzufügen/bearbeiten</a>
+		</p>
+
 		<form>
 			<h3>Meta</h3>
 			<div class="field">
@@ -61,10 +110,15 @@
 					<div class="button" href="#">
 						<i class="icon-tools"></i>
 						<div class="dropdown">
-							<a href="#">TOP 2: Mitteilungen</a>
-							<a href="#">TOP 3: Bericht</a>
-							<a href="#">TOP 4: Finanzordnung</a>
-							<a href="#">TOP 5: ...</a>
+							<a href="#">TOP 1: Mitteilungen</a>
+							<a href="#">TOP 2: Bericht</a>
+							<a href="#">TOP 3: Finanzordnung</a>
+							<a href="#">TOP 4: Anträge</a>
+							<a href="#">TOP 5: Verschiedenes</a>
+							<a href="#">TOP 6: break even point</a>
+							<a href="#">TOP 7: VLU</a>
+							<a href="#">TOP 8: Weihnachtsfeier</a>
+							<a href="#">TOP 9: Sommerfest</a>
 							<hr>
 							<a href="#">Neuen TOP anlegen</a>
 							<a href="#">Neuen Antrag anlegen</a>

@@ -90,6 +90,9 @@
 		@extend .input;
 		left: 2px;
 		&:first-child { left: auto; }
+		@include respond(all-phones) {
+			left: auto;
+		}
 	}
 	textarea { @extend .textarea; }
 }
