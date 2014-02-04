@@ -27,53 +27,11 @@
 {% block body %}
 	<div id="minute-edit" class="row">
 		<h1>Protokoll bearbeiten</h1>
-
-		<div class="modal" id="linkmodal">
-			<div class="content">
-				<a class="close switch" gumby-trigger="|#linkmodal">
-					<i class="icon-cancel" /></i>
-				</a>
-				<div class="row">
-					<h2>Link einfügen</h2>
-
-					<div class="field">
-						<label for="linkurl">Link</label>
-						<input id="linkurl" type="text">
-					</div>
-					<div class="field">
-						<label for="linktext">Text</label>
-						<input id="linktext" type="text">
-					</div>
-					<a id="addlink" href="#">Link hinzufügen</a>
-				</div>
-			</div>
-		</div>
 		<p class="btn primary medium">
 			<a href="#" class="switch" gumby-trigger="#linkmodal">Link hinzufügen</a>
 		</p>
-
-		<div class="modal" id="requestmodal">
-			<div class="content">
-				<a class="close switch" gumby-trigger="|#requestmodal">
-					<i class="icon-cancel" /></i>
-				</a>
-				<div class="row">
-					<h2>Antrag <span class="add">hinzufügen</span><span class="edit">bearbeiten</span></h2>
-
-					<div class="field">
-						<label for="linkurl">Link</label>
-						<input id="linkurl" type="text">
-					</div>
-					<div class="field">
-						<label for="linktext">Text</label>
-						<input id="linktext" type="text">
-					</div>
-					<a id="addlink" href="#">Link hinzufügen</a>
-				</div>
-			</div>
-		</div>
 		<p class="btn primary medium">
-			<a href="#" class="switch" gumby-trigger="#requestmodal">Antrag hinzufügen/bearbeiten</a>
+			<a href="#" class="switch" gumby-trigger="#reordermodal">...</a>
 		</p>
 
 		<form>
@@ -120,8 +78,8 @@
 							<a href="#">TOP 8: Weihnachtsfeier</a>
 							<a href="#">TOP 9: Sommerfest</a>
 							<hr>
-							<a href="#">Neuen TOP anlegen</a>
-							<a href="#">Neuen Antrag anlegen</a>
+							<a href="#" class="switch" gumby-trigger="#topmodal">Neuen TOP anlegen</a>
+							<a href="#" class="switch" gumby-trigger="#requestmodal">Neuen Antrag anlegen</a>
 							<hr>
 							<a href="#">TOPs umsortieren</a>
 						</div>
@@ -170,5 +128,123 @@
 			</div>
 			<a id="save" href="#">Änderungen speichern</a>
 		</form>
+
+
+
+		<div class="modal" id="linkmodal">
+			<div class="content">
+				<a class="close switch" gumby-trigger="|#linkmodal">
+					<i class="icon-cancel" /></i>
+				</a>
+				<div class="row">
+					<h2>Link einfügen</h2>
+
+					<div class="field">
+						<label for="linkurl">Link</label>
+						<input id="linkurl" type="text">
+					</div>
+					<div class="field">
+						<label for="linktext">Text</label>
+						<input id="linktext" type="text">
+					</div>
+					<a class="button" href="#">Einfügen</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal" id="topmodal">
+			<div class="content">
+				<a class="close switch" gumby-trigger="|#topmodal">
+					<i class="icon-cancel" /></i>
+				</a>
+				<div class="row">
+					<h2>TOP hinzufügen</h2>
+
+					<div class="field">
+						<label for="linkurl">Name</label>
+						<input id="linkurl" type="text">
+					</div>
+					<a class="button" href="#">Hinzufügen</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal" id="requestmodal">
+			<div class="content">
+				<a class="close switch" gumby-trigger="|#requestmodal">
+					<i class="icon-cancel" /></i>
+				</a>
+				<div class="row">
+					<h2>Antrag erstellen/bearbeiten</h2>
+
+					<div class="field">
+						<label for="fortop">Hinzufügen zu</label>
+						<input id="fortop" type="text">
+					</div>
+					<div class="field">
+						<label for="requester">Antragsteller</label>
+						<input id="requester" type="text">
+					</div>
+					<div class="field">
+						<label for="requestdescription">Beschreibung</label>
+						<textarea id="requestdescription"></textarea>
+					</div>
+					<div class="field">
+						<label for="moneyz">Betrag</label>
+						<input id="moneyz" type="text">
+					</div>
+					<div class="field" id="vote">
+						<label for="">Abstimmung</label>
+						<input type="number" placeholder="dafür">
+						<input type="number" placeholder="dagegen">
+						<input type="number" placeholder="enthalten">
+					</div>
+					<a class="button" href="#">Übernehmen</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal active" id="reordermodal">
+			<div class="content">
+				<a class="close switch" gumby-trigger="|#reordermodal">
+					<i class="icon-cancel" /></i>
+				</a>
+				<div class="row">
+					<h2>TOPs umsortieren</h2>
+					<div class="dropzone"></div>
+					<div class="field">
+						<label>TOP 1</label>
+						<input type"text" value="Mitteilungen" readonly>
+					</div>
+					<div class="dropzone"></div>
+					<div class="field">
+						<label>TOP 2</label>
+						<input type"text" value="Berichte" readonly>
+					</div>
+					<div class="dropzone"></div>
+					<div class="field">
+						<label>TOP 3</label>
+						<input type"text" value="Semester Opening" readonly>
+					</div>
+					<div class="dropzone"></div>
+					<div class="field">
+						<label>TOP 4</label>
+						<input type"text" value="Anträge" readonly>
+					</div>
+					<div class="dropzone"></div>
+					<div class="field">
+						<label>TOP 5</label>
+						<input type"text" value="Neues StuPa" readonly>
+					</div>
+					<div class="dropzone"></div>
+					<div class="field">
+						<label>TOP 6</label>
+						<input type"text" value="Verschiedenes" readonly>
+					</div>
+					<div class="dropzone"></div>
+					<a class="button" href="#">Übernehmen</a>
+				</div>
+			</div>
+		</div>
 	</div>
 {% endblock body %}

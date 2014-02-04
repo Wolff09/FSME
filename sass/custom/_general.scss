@@ -85,15 +85,17 @@
 		@include column(3);
 		@include line-and-height(height-calc($norm));
 	}
-	input, textarea {
+	input, textarea{
+	}
+	input, textarea, .nested {
 		@include column(9);
-		@extend .input;
 		left: 2px;
-		&:first-child { left: auto; }
+		&:first-child, &.nofix { left: auto; }
 		@include respond(all-phones) {
 			left: auto;
 		}
 	}
+	input, textarea { @extend .input; }
 	textarea { @extend .textarea; }
 }
 

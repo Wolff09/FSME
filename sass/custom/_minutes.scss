@@ -113,11 +113,21 @@
 	}
 
 	.modal {
+		// TODO: as global style?
 		.close { color: $turquoise; }
 		.content { min-height: 10%; }
-		.field { @include formfield; }
+		.field {
+			@include formfield;
+			input, textarea, .nested { @extend .nofix; }
+		}
 		h1, h2, h3, h4 h5, h5 { text-align: center; margin-bottom: 12px; }
-		#addlink { @include button($turquoise); margin-top: 20px; }
+		.button { @include button($turquoise); margin-top: 20px; }
+	}
+
+	#requestmodal .content #vote input { @include column(3); }
+	#reordermodal .dropzone {
+		height: 2px;
+		// &:hover { background: $blue; }
 	}
 }
 
