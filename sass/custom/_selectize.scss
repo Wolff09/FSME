@@ -1,47 +1,15 @@
 
-/***********************************************************************/
-/*********************** OVERRIDE GUMBY DEFAULTS ***********************/
-/***********************************************************************/
+// TODO: remove and move to dedicated folder "{selectize/select/chosen}"
 
-.field {
-	@include border-radius(0);
-	.input,
-	input,
-	&.prepend .input,
-	&.append .input,
-	&.prepend.append input,
-	&.prepend.append input:first-child,
-	&.prepend.append input:last-child,
-	&.prepend *:first-child,
-	&.append *:last-child {
-		@include border-radius(0);
-	}
 
-	textarea, .textarea {
-		@include transition-property(height);
-  		@include transition-duration(1s);
-		height: height-calc($norm)*1 !important;
-		&:focus { height: height-calc($norm)*4 !important; }
-	}
-
-	input, .input, textarea, .textarea {
-		&:focus { border: 1px solid $turquoise; }
-		&.no-focus:focus { border: none; }
-		&.no-border, &.no-border:focus { border: none; }
-	}
-}
-
-/***********************************************************************/
-/********************* OVERRIDE SELECTIZE DEFAULTS *********************/
-/***********************************************************************/
-
+// TODO: selectize border should be $border-color as default
 @mixin selectize-border($color, $positions...) {
 	@each $pos in $positions {
 		border-#{$pos}: 1px solid $color;
 	}
 }
 
-@mixin selectize-color-sheme($default: $form-text-input-stroke, $active: $turquoise) {
+@mixin selectize-color-sheme($default: $border-color, $active: $turquoise) {
 	.selectize-control {
 		// border color
 		.selectize-input {
@@ -61,7 +29,6 @@
 		}
 	}
 }
-
 
 .selectize.field {
 	overflow: visible;
@@ -102,6 +69,26 @@
 			@include border-radius(0);
 			@include box-shadow(none);
 			.option, .create { @include font-size($norm - 2px); }
+		}
+
+		&.single {
+			.selectize-input { 
+				&::after, &.dropdown-active::after {
+					// top: height-calc($norm)/2 !important;
+					// margin-top: 0 !important;
+					font-family: "entypo";
+					content: "\e764";
+					line-height: 36px;
+					position: absolute;
+					top: 0;
+					right: 10px;
+					border: none;
+					margin: 0 !important;
+					width: auto;
+					height: auto;
+				}
+				&.dropdown-active::before { bottom: -2px; }
+			}
 		}
 	}
 

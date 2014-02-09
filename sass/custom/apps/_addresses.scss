@@ -9,10 +9,7 @@ $address-detail-qrcode-size: 100px !default;
 $address-detail-qrcode-size-active: 300px !default;
 
 #address-filter {
-	// TODO: this is the same as in #minute-add -> mixin
-	@extend .padding;
-	margin-bottom: .5em;
-	background: $address-book-bg;
+	@include shout;
 	.columns.selectize.field { margin: 0; }
 	@include selectize-color-sheme();
 }
@@ -89,6 +86,6 @@ $address-detail-qrcode-size-active: 300px !default;
 		margin-top: $small;
 		background: $turquoise;
 		@include color-of($turquoise);
-		&:hover { background: $darkturquoise; }
+		&:hover { background: dark-of($turquoise); }
 	}
 }

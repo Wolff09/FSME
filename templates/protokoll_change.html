@@ -1,25 +1,34 @@
 {% extends "base.html" %}
 
 {% block extra_style %}
+<link rel="stylesheet" href="/static/bower_components/selectize/dist/css/selectize.css">
 {% endblock extra_style %}
 
 {% block extra_js %}
 <script src="/static/js/redactor.min.js"></script>
+<script src="/static/bower_components/Sortable/Sortable.min.js"></script>
+<script src="/static/bower_components/selectize/dist/js/standalone/selectize.js"></script>
 
 <script type="text/javascript">
-	/* TODO:
-	- Den Link dropdown durch einen Einfachen Link Button ersetzen, der die
-	  Funktionalität von "Link einfügen" im Link dropdown hat.
-	- Die Modals von Redactor entfernen und unseren eigenen schreiben, da
-	  wir eh ein Modal für anderes Zeug brauchen
-	*/
 	$(document).ready(function(){
 		$('.redactor').redactor({
+			/* URL+Enter => Link */
 			lang: 'de',
 			autoresize: false,
 			minHeight: 400,
-			buttons: ['bold', 'italic', 'underline', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', '|', 'link', 'unlink']
+			buttons: ['bold', 'italic', 'underline', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent'/*, '|', 'insertlink'*/],
+			buttonsCustom: {
+				insertlink:
+				{
+					title: RLANG.link_insert,
+					func: 'showLink'
+				}
+			},
 		});
+		$('#writer').selectize({ create: false });
+		$('#leader').selectize({ create: false });
+
+		new Sortable($("#reorderbuffer")[0]);
 	});
 </script>
 {% endblock extra_js %}
@@ -27,12 +36,6 @@
 {% block body %}
 	<div id="minute-edit" class="row">
 		<h1>Protokoll bearbeiten</h1>
-		<p class="btn primary medium">
-			<a href="#" class="switch" gumby-trigger="#linkmodal">Link hinzufügen</a>
-		</p>
-		<p class="btn primary medium">
-			<a href="#" class="switch" gumby-trigger="#reordermodal">...</a>
-		</p>
 
 		<form>
 			<h3>Meta</h3>
@@ -40,13 +43,29 @@
 				<label for="date">Sitzungsdatum</label>
 				<input id="date" type="date" />
 			</div>
-			<div class="field">
+			<div class="selectize field">
 				<label for="writer">Protokollant</label>
-				<input id="writer" type="text" />
+				<div class="nested">
+					<select id="writer">
+						<option value selected="selected"></option>
+						<option value="volvo">Volvo</option>
+						<option value="saab">Saab</option>
+						<option value="mercedes">Mercedes</option>
+						<option value="audi">Audi</option>
+					</select>
+				</div>
 			</div>
-			<div class="field">
+			<div class="selectize field">
 				<label for="leader">Sitzungsleitung</label>
-				<input id="leader" type="text" />
+				<div class="nested">
+					<select id="leader">
+						<option value selected="selected"></option>
+						<option value="volvo">Volvo</option>
+						<option value="saab">Saab</option>
+						<option value="mercedes">Mercedes</option>
+						<option value="audi">Audi</option>
+					</select>
+				</div>
 			</div>
 			<div class="field">
 				<label for="cando">Beschlussfähig</label>
@@ -81,32 +100,23 @@
 							<a href="#" class="switch" gumby-trigger="#topmodal">Neuen TOP anlegen</a>
 							<a href="#" class="switch" gumby-trigger="#requestmodal">Neuen Antrag anlegen</a>
 							<hr>
-							<a href="#">TOPs umsortieren</a>
+							<a href="#" class="switch" gumby-trigger="#reordermodal">TOPs umsortieren</a>
 						</div>
 					</div>
 			</div>
-			<textarea class="redactor" name="content"></textarea>
+			<textarea id="top1" class="redactor" name="content"></textarea>
 			<div class="request-list">
 				<div class="request">
 					<span class="title">Antrag 1</span>
 					<span class="from">(von Repastiorique Transgertus)</span>:
 					<span class="howmuchisthefish">&nbsp;&nbsp;77€</span>
 					<div class="description">
-						Was fehlt hier noch? Die Buttons im TOP-Widget sind noch nicht
-						mit Funktionalität belegt. Der Pfeil nach unten soll ein Drop-Down
-						zeigen, mit dem man zu einem TOP springen kann. Das Plus soll
-						ebenfalls ein Dropdown öffnen in dem auswählen kann entweder einen
-						neuen TOP oder einen neuen Antrag anzulegen. Neuer TOP ist klar,
-						neuer Antrag wird zum aktuellen TOP hinzugefügt. Das Shuffle
-						Symbol soll ein Modal öffnen in dem man die TOPs neu sortieren kann.
-						Dies sollte über eine tolle List mit Drag'n'Drop gemacht werden.
-						Zum Erstellen und Bearbeiten von Anträgen werden Modals benutzt.
-						Für mehr Usability könnte man beim Erstellen/Bearbeiten die
-						Möglichkeit geben den Antrag zu einem beliebigen TOP hinzuzufügen,
-						und als Default den aktuellen direkt auswählen.
-						<hr>Man könnte auch alle drei buttons oben in einen zusammenlegen
-						und in einem dropdown alle funktionalität anbieten (top auswählen,
-						top/antrag erstellen, tops umsortieren)
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</div>
 					<span class="success label">Angenommen - 11/2/2</span>
 					<a class="edit" href="#">Bearbeiten</a>
@@ -130,28 +140,6 @@
 		</form>
 
 
-
-		<div class="modal" id="linkmodal">
-			<div class="content">
-				<a class="close switch" gumby-trigger="|#linkmodal">
-					<i class="icon-cancel" /></i>
-				</a>
-				<div class="row">
-					<h2>Link einfügen</h2>
-
-					<div class="field">
-						<label for="linkurl">Link</label>
-						<input id="linkurl" type="text">
-					</div>
-					<div class="field">
-						<label for="linktext">Text</label>
-						<input id="linktext" type="text">
-					</div>
-					<a class="button" href="#">Einfügen</a>
-				</div>
-			</div>
-		</div>
-
 		<div class="modal" id="topmodal">
 			<div class="content">
 				<a class="close switch" gumby-trigger="|#topmodal">
@@ -169,7 +157,7 @@
 			</div>
 		</div>
 
-		<div class="modal" id="requestmodal">
+		<div class="modal activate" id="requestmodal">
 			<div class="content">
 				<a class="close switch" gumby-trigger="|#requestmodal">
 					<i class="icon-cancel" /></i>
@@ -204,44 +192,32 @@
 			</div>
 		</div>
 
-		<div class="modal active" id="reordermodal">
+		<div class="modal" id="reordermodal">
 			<div class="content">
 				<a class="close switch" gumby-trigger="|#reordermodal">
 					<i class="icon-cancel" /></i>
 				</a>
 				<div class="row">
 					<h2>TOPs umsortieren</h2>
-					<div class="dropzone"></div>
-					<div class="field">
-						<label>TOP 1</label>
-						<input type"text" value="Mitteilungen" readonly>
+
+					<div class="row">
+						<div id="reorderhead" class="three columns">
+							<div>TOP 1</div>
+							<div>TOP 2</div>
+							<div>TOP 3</div>
+							<div>TOP 4</div>
+							<div>TOP 5</div>
+							<div>TOP 6</div>
+						</div>
+						<div id="reorderbuffer" class="nine columns">
+							<div>Mitteilungen</div>
+							<div>Berichte</div>
+							<div>Semester Opening</div>
+							<div>Anträge</div>
+							<div>Neues StuPa</div>
+							<div>Verschiedenes</div>
+						</div>
 					</div>
-					<div class="dropzone"></div>
-					<div class="field">
-						<label>TOP 2</label>
-						<input type"text" value="Berichte" readonly>
-					</div>
-					<div class="dropzone"></div>
-					<div class="field">
-						<label>TOP 3</label>
-						<input type"text" value="Semester Opening" readonly>
-					</div>
-					<div class="dropzone"></div>
-					<div class="field">
-						<label>TOP 4</label>
-						<input type"text" value="Anträge" readonly>
-					</div>
-					<div class="dropzone"></div>
-					<div class="field">
-						<label>TOP 5</label>
-						<input type"text" value="Neues StuPa" readonly>
-					</div>
-					<div class="dropzone"></div>
-					<div class="field">
-						<label>TOP 6</label>
-						<input type"text" value="Verschiedenes" readonly>
-					</div>
-					<div class="dropzone"></div>
 					<a class="button" href="#">Übernehmen</a>
 				</div>
 			</div>

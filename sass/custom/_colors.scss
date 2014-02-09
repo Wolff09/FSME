@@ -1,0 +1,58 @@
+/*****************************************************************************/
+/********************************** COLORS ***********************************/
+/*****************************************************************************/
+
+$white			: #fff;
+$black			: #000;
+$grey			: #f1f1f1; // rgb(216, 216, 216); // rgb(227,227,227);
+$blue			: #67b0d1;
+$green			: #60cd9b;
+$red			: #e87352;
+$yellow			: #ebc85e;
+$turquoise		: #3bbec0;
+$black			: #333;
+$brown			: #a48b60;
+$border-color	: darken($default-color, 10%);
+
+
+@function light-of($color) {
+  @return tint($color, 10%);
+}
+
+@function dark-of($color) {
+  @return shade($color, 10%);
+}
+
+@function color-of($color) {
+	// returns a text color for the given color
+	@if $color == $blue { @return #fff; }
+	@else if $color == $green { @return #fff; }
+	@else if $color == $red { @return #fff; }
+	@else if $color == $yellow { @return #000; }
+	@else if $color == $turquoise { @return #000; }
+	@else if $color == $black { @return #fff; }
+	@else if $color == $brown { @return #000; }
+	@else if $color == $white { @return #000; }
+	@else if $color == $black { @return #fff; }
+	@else if $color == $grey { @return #000; }
+	@else { @return #fff; }
+}
+
+@function hover-of($color) {
+	// TODO: find good hover colors
+	@if $color == $grey { @return dark-of($grey); }
+	@else { @return light-of($color); }
+}
+
+/* TODO: remove mixins
+	- color-of
+	- light-color-of
+	- bg-hover-of
+*/
+
+@mixin color-of($bg) { color: color-of($bg); }
+@mixin bg-hover-of($bg) { background: hover-of($bg); }
+@mixin light-color-of($bg) { // potentially light
+	@if $bg == $turquoise { color: #fff; }
+	@else  { @include color-of($bg); }
+}

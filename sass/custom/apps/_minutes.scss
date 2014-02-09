@@ -2,14 +2,6 @@
 /********************************** MINUTES **********************************/
 /*****************************************************************************/
 
-#minute-add {
-	// TODO: this is the same as in #addresss-filter -> mixin
-	@extend .padding;
-	margin-bottom: .5em;
-	background: $table-bgcolor;
-	& > a { @include button($turquoise); }
-}
-
 #minutes-list {
 	@include table($table-bgcolor, $yellow,
 		$body-font-color, $norm*0.9);
@@ -116,18 +108,47 @@
 		// TODO: as global style?
 		.close { color: $turquoise; }
 		.content { min-height: 10%; }
-		.field {
-			@include formfield;
-			input, textarea, .nested { @extend .nofix; }
-		}
+		.field { @include formfield; }
 		h1, h2, h3, h4 h5, h5 { text-align: center; margin-bottom: 12px; }
 		.button { @include button($turquoise); margin-top: 20px; }
 	}
 
-	#requestmodal .content #vote input { @include column(3); }
-	#reordermodal .dropzone {
-		height: 2px;
-		// &:hover { background: $blue; }
+	// TODO: linkmodal is borken for some reason (the input right align)
+
+	#requestmodal .content #vote input {
+		@include column(3);
+	}
+
+	#reordermodal {
+		#reorderhead > div, #reorderbuffer > div {
+			@include line-and-height(height-calc($norm));
+			margin-bottom: 10px;
+		}
+		#reorderbuffer > div {
+			border: 1px solid $border-color;
+			padding: 0 10px;
+			cursor: pointer;
+			&:active, &.sortable-ghost { border-color: $turquoise; }
+			&.sortable-ghost { opacity: .5; }
+	}
+
+
+
+		// & > .row { @include row("nested"); }
+		// .head {
+		// 	@include line-and-height(height-calc($norm));
+		// 	@include column(3);
+		// }
+		// .entry {
+		// 	@include column(9);
+		// 	@include line-and-height(height-calc($norm));
+		// 	border: 1px solid $border-color;
+		// 	padding: 0 10px;
+		// 	margin-bottom: 10px;
+		// 	cursor: pointer;
+		// 	&:active, &.sortable-ghost { border-color: $turquoise; }
+		// 	&.sortable-ghost { opacity: .5; }
+		// }
 	}
 }
 

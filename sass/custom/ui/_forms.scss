@@ -1,0 +1,45 @@
+
+// override some of gumbys defaults
+.field {
+	@include border-radius(0);
+	.input,
+	input,
+	&.prepend .input,
+	&.append .input,
+	&.prepend.append input,
+	&.prepend.append input:first-child,
+	&.prepend.append input:last-child,
+	&.prepend *:first-child,
+	&.append *:last-child {
+		@include border-radius(0);
+	}
+
+	textarea, .textarea {
+		@include transition-property(height);
+  		@include transition-duration(1s);
+		height: height-calc($norm)*1 !important;
+		&:focus { height: height-calc($norm)*4 !important; }
+	}
+
+	input, .input, textarea, .textarea {
+		&:focus { border: 1px solid $turquoise; }
+		&.no-focus:focus { border: none; }
+		&.no-border, &.no-border:focus { border: none; }
+	}
+
+	// TODO: @include formfield; here?
+}
+
+
+@mixin formfield() {
+	@include row("nested");
+	input, textarea { @extend .input; }
+	textarea { @extend .textarea; }
+	label {
+		@include column(3);
+		@include line-and-height(height-calc($norm));
+	}
+	input, textarea, .nested {
+		@include column(9);
+	}
+}

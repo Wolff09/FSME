@@ -1,0 +1,32 @@
+@mixin table($bg, $hover, $font-color, $font-size) {
+	// TODO: defaults for vars
+	display: table; @extend table;
+	.tr { display: table-row; @extend tr; }
+	.td { display: table-cell; @extend td; }
+	.th { display: table-cell; @extend th; }
+	.thead { display: table-header-group; @extend thead; }
+	.tbody { display: table-row-group; @extend tbody; }
+
+	.td.center, .th.center { text-align: center; }
+	.td.left, .th.left { text-align: left; }
+	.td.right, .th.right { text-align: right; }
+
+	.thead .th {
+		background: $bg;
+		@include color-of($bg);
+		@include line-and-height(height-calc($med));
+		// TODO: border-bottom: 1px solid $table-border-color;
+	}
+	.tbody .tr {
+		background: $bg;
+		.td {
+			@include font-size($font-size);
+			font-weight: $font-weight-regular;
+			color: $font-color;
+		}
+	}
+	.tbody .tr:hover .td {
+		background: $hover;
+		@include color-of($hover);
+	}
+}

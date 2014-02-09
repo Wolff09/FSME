@@ -22,6 +22,7 @@ $nav-font-family: $font-family !default;
 
 #nav {
 	// TODO: mobile menu -> img not vertically centered
+	// TODO: mobile menu -> dropdown 1px to high (top)
 	margin-top: $nav-distance;
 	background: $nav-background;
 	@include light-color-of($nav-background);

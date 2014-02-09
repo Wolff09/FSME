@@ -1,0 +1,18 @@
+@mixin button($color) {
+	@extend .btn, .primary, .medium;
+	background: $color;
+	border-color: $color;
+	color: color-of($color);
+	// @include color-of($color);
+	&:hover {
+		background: hover-of($color);
+		color: color-of(hover-of($color));
+		// @include bg-hover-of($color);
+		// color as funtion not include
+	}
+	// TODO: remove :hover border
+	width: 100%;
+	cursor: pointer;
+}
+
+.button { @include button($turquoise); }

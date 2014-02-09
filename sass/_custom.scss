@@ -1,69 +1,3 @@
-// colors
-$white			: #fff;
-$black			: #000;
-$blue			: #67b0d1;
-$green			: #60cd9b;
-$red			: #e87352;
-$yellow			: #ebc85e;
-$turquoise		: #3bbec0;
-$black			: #333;
-$brown			: #a48b60;
-$grey			: #f1f1f1; // rgb(216, 216, 216); // rgb(227,227,227);
-// light colors
-$lightblue		: tint($blue, 10%);
-$lightgreen		: tint($green, 10%);
-$lightred		: tint($red, 10%);
-$lightyellow	: tint($yellow, 10%);
-$lightturquoise	: tint($turquoise, 10%);
-$lightblack		: tint($black, 10%);
-$lightbrown		: tint($brown, 10%);
-$lightgrey		: tint($grey, 10%);
-// dark colors
-$darkblue		: shade($blue, 10%);
-$darkgreen		: shade($green, 10%);
-$darkred		: shade($red, 10%);
-$darkyellow		: shade($yellow, 10%);
-$darkturquoise	: shade($turquoise, 10%);
-$darkblack		: shade($black, 10%);
-$darkbrown		: shade($brown, 10%);
-$darkgrey		: shade($grey, 10%);
-// even more pastell
-$pastellyellow	: tint($yellow, 30%);
-
-@mixin color-of($bg) { // potentially dark
-	// TODO: find good text colors
-	@if $bg == $blue { color: #fff; }
-	@else if $bg == $green { color: #fff; }
-	@else if $bg == $red { color: #fff; }
-	@else if $bg == $yellow { color: #000; }
-	@else if $bg == $turquoise { color: #000; }
-	@else if $bg == $black { color: #fff; }
-	@else if $bg == $brown { color: #000; }
-	@else if $bg == $white { color: #000; }
-	@else if $bg == $black { color: #fff; }
-	@else if $bg == $grey { color: #000; }
-	// TODO: fallback values
-}
-
-@mixin light-color-of($bg) { // potentially light
-	@if $bg == $turquoise { color: #fff; }
-	@else  { @include color-of($bg); }
-}
-
-@mixin bg-hover-of($bg) {
-	// TODO: find good hover colors
-	@if $bg == $blue { background: $lightblue; }
-	@else if $bg == $green { background: $lightgreen; }
-	@else if $bg == $red { background: $lightred; }
-	@else if $bg == $yellow { background: $lightyellow; }
-	@else if $bg == $turquoise { background: $lightturquoise; }
-	@else if $bg == $black { background: $lightblack; }
-	@else if $bg == $brown { background: $lightbrown; }
-	@else if $bg == $grey { background: $darkgrey; }
-	// TODO: fallback values
-}
-
-$border-color: darken($default-color, 10%);
 
 /*
 todo: write include "cshade". For given color output bg, color, bg:hover, color:hover
@@ -72,16 +6,13 @@ todo: write include "cshade". For given color output bg, color, bg:hover, color:
 and one for buttons with border -> or customize gumpy buttons?
 */
 
-
 // TODO: borken in gumpy? protokol defaults to file instead of http -> check in productive
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700");
-@import "custom/redactor/main";
+// @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700");
 
-@import "custom/body";
-@import "custom/general";
-@import "custom/forms";
-@import "custom/navi";
-@import "custom/landing_page";
-@import "custom/address_book";
-@import "custom/minutes";
+@import "custom/colors";
+@import "custom/ui/all";
 
+@import "custom/redactor/all";
+@import "custom/selectize"; // TODO: this should/will be refactored
+
+@import "custom/apps/all";
