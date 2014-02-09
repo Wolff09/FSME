@@ -1,10 +1,12 @@
-@mixin dropdown($size, $bg-color: $grey, $hover-color: dark-of($grey), $border-color: $border-color, $offset: -1px, $orientation: "right") {
+@mixin dropdown($size, $bg-color: $grey, $bg-color-hover: dark-of($grey), $border-color: $border-color, $offset: -1px, $orientation: "right", $color: $body-link-color, $color-hover: $body-link-hover-color) {
 	/* $size: size of the button/trigger this dropdown is attached to
 	 * $bg-color: background color of dropdown and entries
-	 * $hover-color: background color of hovered entries
+	 * $bg-color-hover: background color of hovered entries
 	 * $border-color: color of dropdown border, seperator and indicator arrow
 	 * $offset: amount by which the dropdown is moved into its orientation
 	 * $orientation: alignment of the dropdown to its button/trigger -> "left" or "right"
+	 * $color: text color of links
+	 * $color-hover: text color of hovered links
 	 */
 	position: relative;
 
@@ -43,8 +45,12 @@
 			font-size: $norm;
 			font-weight: $font-weight-regular;
 			@include line-and-height(height-calc($norm));
+			color: $color;
 			background-color: $bg-color;
-			&:hover { background-color: $hover-color; }
+			&:hover {
+				color: $color-hover;
+				background-color: $bg-color-hover;
+			}
 
 			margin: 0;
 			padding: 0 $norm;

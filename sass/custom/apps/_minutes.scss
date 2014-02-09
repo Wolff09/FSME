@@ -94,7 +94,7 @@
 				&:first-of-type { border-left: none; }
 				&:last-child { border-right: 1px solid $border-color; }
 
-				@include dropdown($size);
+				@include dropdown($size, $color: $black, $color-hover: $black);
 			}
 		}
 
@@ -106,7 +106,10 @@
 
 	.modal {
 		// TODO: as global style?
-		.close { color: $turquoise; }
+		.close {
+			color: $turquoise;
+			&:hover { color: hover-of($turquoise); }
+		}
 		.content { min-height: 10%; }
 		.field { @include formfield; }
 		h1, h2, h3, h4 h5, h5 { text-align: center; margin-bottom: 12px; }
@@ -169,7 +172,11 @@
 			&.accpeted { @extend .success; background: $green; }
 			&.denied { @extend .danger; background: $red; }
 		}
-		.edit { float: right; }
+		.edit {
+			float: right;
+			color: $turquoise;
+			&:hover { color: hover-of($turquoise); }
+		}
 	}
 }
 

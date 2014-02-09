@@ -7,7 +7,8 @@
 {% block extra_js %}
 <script src="/static/js/redactor.min.js"></script>
 <script src="/static/bower_components/Sortable/Sortable.min.js"></script>
-<script src="/static/bower_components/selectize/dist/js/standalone/selectize.js"></script>
+<!-- <script src="/static/bower_components/selectize/dist/js/standalone/selectize.js"></script> -->
+<script src="/static/bower_components/select2/select2.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -25,8 +26,8 @@
 				}
 			},
 		});
-		$('#writer').selectize({ create: false });
-		$('#leader').selectize({ create: false });
+
+		$("select.select2").select2();
 
 		new Sortable($("#reorderbuffer")[0]);
 	});
@@ -43,11 +44,11 @@
 				<label for="date">Sitzungsdatum</label>
 				<input id="date" type="date" />
 			</div>
-			<div class="selectize field">
+			<div class="field">
 				<label for="writer">Protokollant</label>
 				<div class="nested">
-					<select id="writer">
-						<option value selected="selected"></option>
+					<select class="select2" id="writer" data-placeholder="">
+						<option></option>
 						<option value="volvo">Volvo</option>
 						<option value="saab">Saab</option>
 						<option value="mercedes">Mercedes</option>
@@ -55,11 +56,11 @@
 					</select>
 				</div>
 			</div>
-			<div class="selectize field">
+			<div class="field">
 				<label for="leader">Sitzungsleitung</label>
 				<div class="nested">
-					<select id="leader">
-						<option value selected="selected"></option>
+					<select class="select2" id="leader" data-placeholder="">
+						<option></option>
 						<option value="volvo">Volvo</option>
 						<option value="saab">Saab</option>
 						<option value="mercedes">Mercedes</option>
@@ -97,10 +98,9 @@
 							<a href="#">TOP 8: Weihnachtsfeier</a>
 							<a href="#">TOP 9: Sommerfest</a>
 							<hr>
+							<a href="#" class="switch" gumby-trigger="#reordermodal">TOPs umsortieren</a>
 							<a href="#" class="switch" gumby-trigger="#topmodal">Neuen TOP anlegen</a>
 							<a href="#" class="switch" gumby-trigger="#requestmodal">Neuen Antrag anlegen</a>
-							<hr>
-							<a href="#" class="switch" gumby-trigger="#reordermodal">TOPs umsortieren</a>
 						</div>
 					</div>
 			</div>

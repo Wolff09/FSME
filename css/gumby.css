@@ -4476,7 +4476,7 @@ and one for buttons with border -> or customize gumpy buttons?
 /* line 18, ../sass/custom/ui/_buttons.scss */
 .button { background: #3bbec0; border-color: #3bbec0; color: black; width: 100%; cursor: pointer; }
 /* line 7, ../sass/custom/ui/_buttons.scss */
-.button:hover { background: #4ec4c6; color: white; }
+.button:hover { background: #60cacc; color: white; }
 
 /* line 3, ../sass/custom/ui/_forms.scss */
 .field { -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; }
@@ -4601,94 +4601,6 @@ and one for buttons with border -> or customize gumpy buttons?
 /* line 41, ../sass/custom/redactor/_toolbar.scss */
 .redactor_toolbar li a:hover, .redactor_toolbar li a:active, .redactor_toolbar li a.redactor_act { border-color: #d8d8d8; background-color: #d8d8d8; outline: none; }
 
-/*
-	DROPDOWN TODO: style this properly
-*/
-/* line 6, ../sass/custom/redactor/_dropdown.scss */
-.redactor_dropdown { top: 28px; left: 0; z-index: 2004; position: absolute; width: 200px; background-color: #fff; border: 1px solid #ccc; line-height: 21px; padding: 10px; }
-
-/* line 22, ../sass/custom/redactor/_dropdown.scss */
-.redactor_separator_drop { border-top: 1px solid #ddd; padding: 0 !important; line-height: 0; font-size: 0; }
-
-/* line 28, ../sass/custom/redactor/_dropdown.scss */
-.redactor_dropdown a { display: block; color: #000; padding: 3px 5px; text-decoration: none; }
-
-/* line 34, ../sass/custom/redactor/_dropdown.scss */
-.redactor_dropdown a:hover { color: #444 !important; text-decoration: none; background-color: #dde4ef; }
-
-/* MODAL */
-/* line 4, ../sass/custom/redactor/_modal.scss */
-#redactor_modal_overlay { position: fixed; margin: auto; top: 0; left: 0; width: 100%; height: 100%; z-index: 50000; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; filter: alpha(opacity=50); opacity: 0.50; background-color: #333 !important; }
-
-/* line 20, ../sass/custom/redactor/_modal.scss */
-#redactor_modal { background: #f7f7f7; background: -moz-linear-gradient(top, #f7f7f7 0%, #e2e2e2 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(100%, #e2e2e2)); background: -webkit-linear-gradient(top, #f7f7f7 0%, #e2e2e2 100%); background: -o-linear-gradient(top, #f7f7f7 0%, #e2e2e2 100%); background: -ms-linear-gradient(top, #f7f7f7 0%, #e2e2e2 100%); background: linear-gradient(to bottom, #f7f7f7 0%, #e2e2e2 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e2e2e2',GradientType=0 ); text-shadow: 0 1px 0 #fff; padding: 0; position: fixed; top: 50%; left: 50%; box-shadow: 0px 5px 60px #000; border-radius: 3px; z-index: 50001; font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif; font-size: 12px !important; color: #000; }
-
-/* line 41, ../sass/custom/redactor/_modal.scss */
-#redactor_modal_header { padding: 11px 30px 0 15px; font-size: 12px; border-radius: 3px 3px 0 0; font-weight: bold; }
-
-/* line 47, ../sass/custom/redactor/_modal.scss */
-#redactor_modal_content { padding: 20px 30px; }
-
-/* line 51, ../sass/custom/redactor/_modal.scss */
-#redactor_modal_close { position: absolute; right: 5px; top: 5px; font-size: 20px; width: 20px; height: 20px; color: #777; cursor: pointer; }
-
-/* line 61, ../sass/custom/redactor/_modal.scss */
-#redactor_modal_close:hover { color: #000; }
-
-/* line 64, ../sass/custom/redactor/_modal.scss */
-#redactor_modal label { margin: 10px 0 3px 0 !important; padding: 0 !important; float: none !important; display: block !important; }
-
-/* line 70, ../sass/custom/redactor/_modal.scss */
-#redactor_modal textarea { margin-top: 4px; display: block; }
-
-/* line 74, ../sass/custom/redactor/_modal.scss */
-.redactor_input { width: 99%; font-size: 14px; }
-
-/* line 78, ../sass/custom/redactor/_modal.scss */
-.redactor_modal_box { height: 350px; overflow: auto; margin-bottom: 10px; }
-
-/* line 83, ../sass/custom/redactor/_modal.scss */
-#redactor_image_box { height: 270px; overflow: auto; margin-bottom: 10px; }
-
-/* line 88, ../sass/custom/redactor/_modal.scss */
-#redactor_image_box_select { display: block; width: 200px; margin-bottom: 15px; }
-
-/* line 93, ../sass/custom/redactor/_modal.scss */
-#redactor_image_box img { margin-right: 10px; margin-bottom: 10px; cursor: pointer; max-width: 100px; }
-
-/* line 99, ../sass/custom/redactor/_modal.scss */
-#redactor_tabs { margin-bottom: 18px; }
-
-/* line 102, ../sass/custom/redactor/_modal.scss */
-#redactor_tabs a { display: inline-block; border: 1px solid #d2d2d2; padding: 4px 14px; font-size: 12px; background-color: #fff; text-decoration: none; color: #000; line-height: 1; border-radius: 10px; margin-right: 5px; }
-
-/* line 114, ../sass/custom/redactor/_modal.scss */
-#redactor_tabs a:hover, #redactor_tabs a.redactor_tabs_act { background-color: #ddd; padding: 5px 15px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) inset; border: none; text-shadow: 0 1px 0 #eee; color: #777 !important; text-decoration: none !important; }
-
-/* line 123, ../sass/custom/redactor/_modal.scss */
-#redactor_modal_footer { padding: 9px 30px 20px 30px; border-radius: 0 0 3px 3px; text-align: right; }
-
-/* line 130, ../sass/custom/redactor/_modal.scss */
-#redactor_modal input[type="radio"], #redactor_modal input[type="checkbox"] { position: relative; top: -1px; }
-
-/* line 137, ../sass/custom/redactor/_modal.scss */
-#redactor_modal input[type="text"], #redactor_modal input[type="password"], #redactor_modal input[type="email"], #redactor_modal textarea { position: relative; z-index: 2; font-family: Helvetica, Arial, Tahoma, sans-serif; height: 23px; border: 1px solid #ccc; margin: 0; padding: 1px 2px; background-color: white; color: #333; font-size: 13px; line-height: 1; border-radius: 1px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset; -webkit-transition: border 0.3s ease-in; -moz-transition: border 0.3s ease-in; -ms-transition: border 0.3s ease-in; -o-transition: border 0.3s ease-in; transition: border 0.3s ease-in; }
-
-/* line 157, ../sass/custom/redactor/_modal.scss */
-#redactor_modal textarea { line-height: 1.4em; }
-
-/* line 161, ../sass/custom/redactor/_modal.scss */
-#redactor_modal input:focus, #redactor_modal textarea:focus { outline: none; border-color: #5ca9e4; box-shadow: 0 0 0 2px rgba(70, 161, 231, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2) inset; }
-
-/* line 167, ../sass/custom/redactor/_modal.scss */
-.redactor_modal_btn { margin-left: 8px; position: relative; cursor: pointer; outline: none; display: inline-block; text-align: center; text-decoration: none; font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif; line-height: 1; font-size: 12px; font-weight: normal; padding: 6px 16px 5px 16px; border-radius: 4px; background-color: #f3f3f3; background-image: -moz-linear-gradient(top, white, #e1e1e1); background-image: -ms-linear-gradient(top, white, #e1e1e1); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#e1e1e1)); background-image: -webkit-linear-gradient(top, white, #e1e1e1); background-image: -o-linear-gradient(top, white, #e1e1e1); background-image: linear-gradient(top, #ffffff, #e1e1e1); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e1e1e1', GradientType=0); border: 1px solid #ccc; border-bottom-color: #aaa; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); text-shadow: 0 1px 0px #ffffff; color: #000; }
-
-/* line 195, ../sass/custom/redactor/_modal.scss */
-.redactor_modal_btn:hover { color: #555; }
-
-/* line 198, ../sass/custom/redactor/_modal.scss */
-.redactor_modal_btn:hover { filter: none; background: none; background: #f3f3f3; text-shadow: 0 1px 0px rgba(255, 255, 255, 0.8); text-decoration: none; }
-
 /* line 33, ../sass/custom/_selectize.scss */
 .selectize.field { overflow: visible; }
 /* line 16, ../sass/custom/_selectize.scss */
@@ -4722,6 +4634,284 @@ and one for buttons with border -> or customize gumpy buttons?
 /* line 90, ../sass/custom/_selectize.scss */
 .selectize.field .selectize-control.single .selectize-input.dropdown-active::before { bottom: -2px; }
 
+/*
+Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
+*/
+/* line 4, ../sass/custom/select2/_base.scss */
+.select2-container { margin: 0; position: relative; display: inline-block; /* inline-block for ie7 */ zoom: 1; *display: inline; vertical-align: middle; }
+
+/* line 17, ../sass/custom/select2/_base.scss */
+.select2-container, .select2-drop, .select2-search, .select2-search input {   /* Force border-box so that % widths fit the parent container without overlap because of margin/padding.
+ More Info : http://www.quirksmode.org/css/box.html */ -webkit-box-sizing: border-box; /* webkit */ -moz-box-sizing: border-box; /* firefox */ box-sizing: border-box; /* css3 */ }
+
+/* line 29, ../sass/custom/select2/_base.scss */
+.select2-container .select2-choice { display: block; height: 26px; padding: 0 0 0 8px; overflow: hidden; position: relative; border: 1px solid #aaa; white-space: nowrap; line-height: 26px; color: #444; text-decoration: none; border-radius: 4px; background-clip: padding-box; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; background-color: #fff; background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(0.5, white)); background-image: -webkit-linear-gradient(center bottom, #eeeeee 0%, white 50%); background-image: -moz-linear-gradient(center bottom, #eeeeee 0%, white 50%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#eeeeee', GradientType = 0); background-image: linear-gradient(top, #ffffff 0%, #eeeeee 50%); }
+
+/* line 60, ../sass/custom/select2/_base.scss */
+.select2-container.select2-drop-above .select2-choice { border-bottom-color: #aaa; border-radius: 0 0 4px 4px; background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(0.9, white)); background-image: -webkit-linear-gradient(center bottom, #eeeeee 0%, white 90%); background-image: -moz-linear-gradient(center bottom, #eeeeee 0%, white 90%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0); background-image: linear-gradient(top, #eeeeee 0%, #ffffff 90%); }
+
+/* line 72, ../sass/custom/select2/_base.scss */
+.select2-container.select2-allowclear .select2-choice .select2-chosen { margin-right: 42px; }
+
+/* line 76, ../sass/custom/select2/_base.scss */
+.select2-container .select2-choice > .select2-chosen { margin-right: 26px; display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+/* line 86, ../sass/custom/select2/_base.scss */
+.select2-container .select2-choice abbr { display: none; width: 12px; height: 12px; position: absolute; right: 24px; top: 8px; font-size: 1px; text-decoration: none; border: 0; cursor: pointer; outline: 0; }
+
+/* line 103, ../sass/custom/select2/_base.scss */
+.select2-container.select2-allowclear .select2-choice abbr { display: inline-block; }
+
+/* line 107, ../sass/custom/select2/_base.scss */
+.select2-container .select2-choice abbr:hover { background-position: right -11px; cursor: pointer; }
+
+/* line 112, ../sass/custom/select2/_base.scss */
+.select2-drop-mask { border: 0; margin: 0; padding: 0; position: fixed; left: 0; top: 0; min-height: 100%; min-width: 100%; height: auto; width: auto; opacity: 0; z-index: 9998; /* styles required for IE to work */ background-color: #fff; filter: alpha(opacity=0); }
+
+/* line 130, ../sass/custom/select2/_base.scss */
+.select2-drop { width: 100%; margin-top: -1px; position: absolute; z-index: 9999; top: 100%; background: #fff; color: #000; border: 1px solid #aaa; border-top: 0; border-radius: 0 0 4px 4px; -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15); box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15); }
+
+/* line 148, ../sass/custom/select2/_base.scss */
+.select2-drop-auto-width { border-top: 1px solid #aaa; width: auto; }
+
+/* line 153, ../sass/custom/select2/_base.scss */
+.select2-drop-auto-width .select2-search { padding-top: 4px; }
+
+/* line 157, ../sass/custom/select2/_base.scss */
+.select2-drop.select2-drop-above { margin-top: 1px; border-top: 1px solid #aaa; border-bottom: 0; border-radius: 4px 4px 0 0; -webkit-box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.15); box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.15); }
+
+/* line 168, ../sass/custom/select2/_base.scss */
+.select2-drop-active { border: 1px solid #5897fb; border-top: none; }
+
+/* line 173, ../sass/custom/select2/_base.scss */
+.select2-drop.select2-drop-above.select2-drop-active { border-top: 1px solid #5897fb; }
+
+/* line 177, ../sass/custom/select2/_base.scss */
+.select2-container .select2-choice .select2-arrow { display: inline-block; width: 18px; height: 100%; position: absolute; right: 0; top: 0; border-left: 1px solid #aaa; border-radius: 0 4px 4px 0; background-clip: padding-box; background: #ccc; background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #cccccc), color-stop(0.6, #eeeeee)); background-image: -webkit-linear-gradient(center bottom, #cccccc 0%, #eeeeee 60%); background-image: -moz-linear-gradient(center bottom, #cccccc 0%, #eeeeee 60%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#eeeeee', endColorstr = '#cccccc', GradientType = 0); background-image: linear-gradient(top, #cccccc 0%, #eeeeee 60%); }
+
+/* line 198, ../sass/custom/select2/_base.scss */
+.select2-container .select2-choice .select2-arrow b { display: block; width: 100%; height: 100%; }
+
+/* line 205, ../sass/custom/select2/_base.scss */
+.select2-search { display: inline-block; width: 100%; min-height: 26px; margin: 0; padding-left: 4px; padding-right: 4px; position: relative; z-index: 10000; white-space: nowrap; }
+
+/* line 219, ../sass/custom/select2/_base.scss */
+.select2-search input { width: 100%; height: auto !important; min-height: 26px; padding: 4px 20px 4px 5px; margin: 0; outline: 0; font-family: sans-serif; font-size: 1em; border: 1px solid #aaa; border-radius: 0; -webkit-box-shadow: none; box-shadow: none; }
+
+/* line 243, ../sass/custom/select2/_base.scss */
+.select2-drop.select2-drop-above .select2-search input { margin-top: 4px; }
+
+/* line 247, ../sass/custom/select2/_base.scss */
+.select2-search input.select2-active { background: white url("select2-spinner.gif") no-repeat 100%; background: url("select2-spinner.gif") no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee)); background: url("select2-spinner.gif") no-repeat 100%, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%); background: url("select2-spinner.gif") no-repeat 100%, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%); background: url("select2-spinner.gif") no-repeat 100%, linear-gradient(top, #ffffff 85%, #eeeeee 99%); }
+
+/* line 256, ../sass/custom/select2/_base.scss */
+.select2-container-active .select2-choice, .select2-container-active .select2-choices { border: 1px solid #5897fb; outline: none; -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
+
+/* line 264, ../sass/custom/select2/_base.scss */
+.select2-dropdown-open .select2-choice { border-bottom-color: transparent; -webkit-box-shadow: 0 1px 0 #fff inset; box-shadow: 0 1px 0 #fff inset; border-bottom-left-radius: 0; border-bottom-right-radius: 0; background-color: #eee; background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, white), color-stop(0.5, #eeeeee)); background-image: -webkit-linear-gradient(center bottom, white 0%, #eeeeee 50%); background-image: -moz-linear-gradient(center bottom, white 0%, #eeeeee 50%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#ffffff', GradientType=0); background-image: linear-gradient(top, #ffffff 0%, #eeeeee 50%); }
+
+/* line 281, ../sass/custom/select2/_base.scss */
+.select2-dropdown-open.select2-drop-above .select2-choice, .select2-dropdown-open.select2-drop-above .select2-choices { border: 1px solid #5897fb; border-top-color: transparent; background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #eeeeee)); background-image: -webkit-linear-gradient(center top, white 0%, #eeeeee 50%); background-image: -moz-linear-gradient(center top, white 0%, #eeeeee 50%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#ffffff', GradientType=0); background-image: linear-gradient(bottom, #ffffff 0%, #eeeeee 50%); }
+
+/* line 292, ../sass/custom/select2/_base.scss */
+.select2-dropdown-open .select2-choice .select2-arrow { background: transparent; border-left: none; filter: none; }
+
+/* line 297, ../sass/custom/select2/_base.scss */
+.select2-dropdown-open .select2-choice .select2-arrow b { background-position: -18px 1px; }
+
+/* results */
+/* line 302, ../sass/custom/select2/_base.scss */
+.select2-results { max-height: 200px; padding: 0 0 0 4px; margin: 4px 4px 4px 0; position: relative; overflow-x: hidden; overflow-y: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+/* line 312, ../sass/custom/select2/_base.scss */
+.select2-results ul.select2-result-sub { margin: 0; padding-left: 0; }
+
+/* line 317, ../sass/custom/select2/_base.scss */
+.select2-results ul.select2-result-sub > li .select2-result-label { padding-left: 20px; }
+
+/* line 318, ../sass/custom/select2/_base.scss */
+.select2-results ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 40px; }
+
+/* line 319, ../sass/custom/select2/_base.scss */
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 60px; }
+
+/* line 320, ../sass/custom/select2/_base.scss */
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 80px; }
+
+/* line 321, ../sass/custom/select2/_base.scss */
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 100px; }
+
+/* line 322, ../sass/custom/select2/_base.scss */
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 110px; }
+
+/* line 323, ../sass/custom/select2/_base.scss */
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 120px; }
+
+/* line 325, ../sass/custom/select2/_base.scss */
+.select2-results li { list-style: none; display: list-item; background-image: none; }
+
+/* line 331, ../sass/custom/select2/_base.scss */
+.select2-results li.select2-result-with-children > .select2-result-label { font-weight: bold; }
+
+/* line 335, ../sass/custom/select2/_base.scss */
+.select2-results .select2-result-label { padding: 3px 7px 4px; margin: 0; cursor: pointer; min-height: 1em; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+/* line 349, ../sass/custom/select2/_base.scss */
+.select2-results .select2-highlighted { background: #3875d7; color: #fff; }
+
+/* line 354, ../sass/custom/select2/_base.scss */
+.select2-results li em { background: #feffde; font-style: normal; }
+
+/* line 359, ../sass/custom/select2/_base.scss */
+.select2-results .select2-highlighted em { background: transparent; }
+
+/* line 363, ../sass/custom/select2/_base.scss */
+.select2-results .select2-highlighted ul { background: #fff; color: #000; }
+
+/* line 371, ../sass/custom/select2/_base.scss */
+.select2-results .select2-no-results, .select2-results .select2-searching, .select2-results .select2-selection-limit { background: #f4f4f4; display: list-item; }
+
+/*
+disabled look for disabled choices in the results dropdown
+*/
+/* line 379, ../sass/custom/select2/_base.scss */
+.select2-results .select2-disabled.select2-highlighted { color: #666; background: #f4f4f4; display: list-item; cursor: default; }
+
+/* line 385, ../sass/custom/select2/_base.scss */
+.select2-results .select2-disabled { background: #f4f4f4; display: list-item; cursor: default; }
+
+/* line 391, ../sass/custom/select2/_base.scss */
+.select2-results .select2-selected { display: none; }
+
+/* line 395, ../sass/custom/select2/_base.scss */
+.select2-more-results.select2-active { background: #f4f4f4 url("select2-spinner.gif") no-repeat 100%; }
+
+/* line 399, ../sass/custom/select2/_base.scss */
+.select2-more-results { background: #f4f4f4; display: list-item; }
+
+/* disabled styles */
+/* line 406, ../sass/custom/select2/_base.scss */
+.select2-container.select2-container-disabled .select2-choice { background-color: #f4f4f4; background-image: none; border: 1px solid #ddd; cursor: default; }
+
+/* line 413, ../sass/custom/select2/_base.scss */
+.select2-container.select2-container-disabled .select2-choice .select2-arrow { background-color: #f4f4f4; background-image: none; border-left: 0; }
+
+/* line 419, ../sass/custom/select2/_base.scss */
+.select2-container.select2-container-disabled .select2-choice abbr { display: none; }
+
+/* multiselect */
+/* line 426, ../sass/custom/select2/_base.scss */
+.select2-container-multi .select2-choices { height: auto !important; height: 1%; margin: 0; padding: 0; position: relative; border: 1px solid #aaa; cursor: text; overflow: hidden; background-color: #fff; background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(1%, #eeeeee), color-stop(15%, white)); background-image: -webkit-linear-gradient(top, #eeeeee 1%, white 15%); background-image: -moz-linear-gradient(top, #eeeeee 1%, white 15%); background-image: linear-gradient(top, #eeeeee 1%, #ffffff 15%); }
+
+/* line 444, ../sass/custom/select2/_base.scss */
+.select2-locked { padding: 3px 5px 3px 5px !important; }
+
+/* line 448, ../sass/custom/select2/_base.scss */
+.select2-container-multi .select2-choices { min-height: 26px; }
+
+/* line 452, ../sass/custom/select2/_base.scss */
+.select2-container-multi.select2-container-active .select2-choices { border: 1px solid #5897fb; outline: none; -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
+
+/* line 459, ../sass/custom/select2/_base.scss */
+.select2-container-multi .select2-choices li { float: left; list-style: none; }
+
+/* line 463, ../sass/custom/select2/_base.scss */
+.select2-container-multi .select2-choices .select2-search-field { margin: 0; padding: 0; white-space: nowrap; }
+
+/* line 469, ../sass/custom/select2/_base.scss */
+.select2-container-multi .select2-choices .select2-search-field input { padding: 5px; margin: 1px 0; font-family: sans-serif; font-size: 100%; color: #666; outline: 0; border: 0; -webkit-box-shadow: none; box-shadow: none; background: transparent !important; }
+
+/* line 483, ../sass/custom/select2/_base.scss */
+.select2-container-multi .select2-choices .select2-search-field input.select2-active { background: white url("select2-spinner.gif") no-repeat 100% !important; }
+
+/* line 487, ../sass/custom/select2/_base.scss */
+.select2-default { color: #999 !important; }
+
+/* line 491, ../sass/custom/select2/_base.scss */
+.select2-container-multi .select2-choices .select2-search-choice { padding: 3px 5px 3px 18px; margin: 3px 0 3px 5px; position: relative; line-height: 13px; color: #333; cursor: default; border: 1px solid #aaaaaa; border-radius: 3px; -webkit-box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05); box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05); background-clip: padding-box; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; background-color: #e4e4e4; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#f4f4f4', GradientType=0); background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee)); background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%); background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%); background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%); }
+
+/* line 521, ../sass/custom/select2/_base.scss */
+.select2-container-multi .select2-choices .select2-search-choice .select2-chosen { cursor: default; }
+
+/* line 524, ../sass/custom/select2/_base.scss */
+.select2-container-multi .select2-choices .select2-search-choice-focus { background: #d4d4d4; }
+
+/* line 528, ../sass/custom/select2/_base.scss */
+.select2-search-choice-close { display: block; width: 12px; height: 13px; position: absolute; right: 3px; top: 4px; font-size: 1px; outline: none; }
+
+/* line 541, ../sass/custom/select2/_base.scss */
+.select2-container-multi .select2-search-choice-close { left: 3px; }
+
+/* line 545, ../sass/custom/select2/_base.scss */
+.select2-container-multi .select2-choices .select2-search-choice .select2-search-choice-close:hover { background-position: right -11px; }
+
+/* line 548, ../sass/custom/select2/_base.scss */
+.select2-container-multi .select2-choices .select2-search-choice-focus .select2-search-choice-close { background-position: right -11px; }
+
+/* disabled styles */
+/* line 553, ../sass/custom/select2/_base.scss */
+.select2-container-multi.select2-container-disabled .select2-choices { background-color: #f4f4f4; background-image: none; border: 1px solid #ddd; cursor: default; }
+
+/* line 560, ../sass/custom/select2/_base.scss */
+.select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice { padding: 3px 5px 3px 5px; border: 1px solid #ddd; background-image: none; background-color: #f4f4f4; }
+
+/* line 567, ../sass/custom/select2/_base.scss */
+.select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice .select2-search-choice-close { display: none; background: none; }
+
+/* end multiselect */
+/* line 574, ../sass/custom/select2/_base.scss */
+.select2-result-selectable .select2-match, .select2-result-unselectable .select2-match { text-decoration: underline; }
+
+/* line 578, ../sass/custom/select2/_base.scss */
+.select2-offscreen, .select2-offscreen:focus { clip: rect(0 0 0 0) !important; width: 1px !important; height: 1px !important; border: 0 !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; position: absolute !important; outline: 0 !important; left: 0px !important; top: 0px !important; }
+
+/* line 592, ../sass/custom/select2/_base.scss */
+.select2-display-none { display: none; }
+
+/* line 596, ../sass/custom/select2/_base.scss */
+.select2-measure-scrollbar { position: absolute; top: -10000px; left: -10000px; width: 100px; height: 100px; overflow: scroll; }
+
+/* Retina-ize icons */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) { /* line 607, ../sass/custom/select2/_base.scss */
+  .select2-search input, .select2-search-choice-close, .select2-container .select2-choice abbr, .select2-container .select2-choice .select2-arrow b { background-repeat: no-repeat !important; background-size: 60px 40px !important; }
+  /* line 612, ../sass/custom/select2/_base.scss */
+  .select2-search input { background-position: 100% -21px !important; } }
+/* line 1, ../sass/custom/select2/_override.scss */
+.select2-container { width: 100%; }
+/* line 4, ../sass/custom/select2/_override.scss */
+.select2-container .select2-choice { height: 36px; line-height: 34px; border: 1px solid #d8d8d8; background: white; color: #333333; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; font-size: 16px; }
+/* line 13, ../sass/custom/select2/_override.scss */
+.select2-container .select2-choice .select2-chosen { margin-right: 36px; }
+/* line 16, ../sass/custom/select2/_override.scss */
+.select2-container .select2-choice .select2-arrow { border: none; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; width: 36px; background: inherit; color: #d8d8d8; }
+/* line 25, ../sass/custom/select2/_override.scss */
+.select2-container .select2-choice .select2-arrow b { background: none; text-align: center; }
+/* line 28, ../sass/custom/select2/_override.scss */
+.select2-container .select2-choice .select2-arrow b:after { font-family: "entypo"; content: "\e764"; }
+/* line 36, ../sass/custom/select2/_override.scss */
+.select2-container.select2-dropdown-open .select2-choice .select2-arrow b:after { content: "\e767"; }
+/* line 40, ../sass/custom/select2/_override.scss */
+.select2-container.select2-container-active .select2-choice { border: 1px solid #3bbec0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
+/* line 45, ../sass/custom/select2/_override.scss */
+.select2-container.select2-dropdown-open.select2-container-active .select2-choice { border-bottom: 1px solid #d8d8d8; }
+
+/* line 57, ../sass/custom/select2/_override.scss */
+.select2-drop { border: 1px solid #3bbec0; border-top: none; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; }
+/* line 64, ../sass/custom/select2/_override.scss */
+.select2-drop .select2-search { margin-top: 5px; padding: 0 5px; }
+/* line 68, ../sass/custom/select2/_override.scss */
+.select2-drop .select2-search input { background: white; border-color: #d8d8d8; height: 36px; line-height: 34px; font-family: "Open Sans"; padding: 0 10px; }
+/* line 76, ../sass/custom/select2/_override.scss */
+.select2-drop .select2-results { margin: 5px; padding: 0; }
+/* line 79, ../sass/custom/select2/_override.scss */
+.select2-drop .select2-results .select2-result { height: 36px; line-height: 34px; font-size: 16px; padding: 0; }
+/* line 84, ../sass/custom/select2/_override.scss */
+.select2-drop .select2-results .select2-result.select2-highlighted { background: #3bbec0; color: black; }
+/* line 88, ../sass/custom/select2/_override.scss */
+.select2-drop .select2-results .select2-result .select2-result-label { padding: 0 10px; }
+/* line 92, ../sass/custom/select2/_override.scss */
+.select2-drop .select2-results .select2-no-results { margin-top: 4px; padding: 0 10px; height: 36px; line-height: 34px; background: none; font-style: italic; }
+
 /* line 3, ../sass/custom/apps/_body.scss */
 html, html body { height: auto; }
 
@@ -4748,13 +4938,13 @@ body #body-wrapper { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEU
 /* line 43, ../sass/custom/apps/_navi.scss */
 #nav ul li a, #nav ul li:hover a { background: #3bbec0; border: none; border-left: 1px solid #009d9e; font-family: "Open Sans"; color: #fff; height: 70px; line-height: 70px; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; text-shadow: none; }
 /* line 12, ../sass/custom/apps/_navi.scss */
-#nav ul li a:hover, #nav ul li:hover a:hover { background: #4ec4c6; }
+#nav ul li a:hover, #nav ul li:hover a:hover { background: #60cacc; }
 @media only screen and (max-width: 767px) { /* line 43, ../sass/custom/apps/_navi.scss */
   #nav ul li a, #nav ul li:hover a { border-left: none; } }
 /* line 50, ../sass/custom/apps/_navi.scss */
 #nav a.btn, #nav a.button, #nav #address-form a#save, #address-form #nav a#save, #nav #minute-edit form #top-widget > a.button, #minute-edit form #nav #top-widget > a.button, #nav #minute-edit form a#save, #minute-edit form #nav a#save, #nav #minute-edit .modal a.button, #minute-edit .modal #nav a.button { top: 0; right: 0; background: #3bbec0; border: none; border-left: 1px solid #009d9e; font-family: "Open Sans"; color: #fff; height: 70px; line-height: 70px; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; text-shadow: none; width: 80px; }
 /* line 12, ../sass/custom/apps/_navi.scss */
-#nav a.btn:hover, #nav a.button:hover, #nav #address-form a#save:hover, #address-form #nav a#save:hover, #nav #minute-edit form #top-widget > a.button:hover, #minute-edit form #nav #top-widget > a.button:hover, #nav #minute-edit form a#save:hover, #minute-edit form #nav a#save:hover { background: #4ec4c6; }
+#nav a.btn:hover, #nav a.button:hover, #nav #address-form a#save:hover, #address-form #nav a#save:hover, #nav #minute-edit form #top-widget > a.button:hover, #minute-edit form #nav #top-widget > a.button:hover, #nav #minute-edit form a#save:hover, #minute-edit form #nav a#save:hover { background: #60cacc; }
 
 /**************************************************************************************/
 /************************************ LANDING PAGE ************************************/
@@ -4995,42 +5185,44 @@ body #body-wrapper { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEU
 /* line 79, ../sass/custom/apps/_minutes.scss */
 #minute-edit form #top-widget > .field input { width: 100%; }
 /* line 80, ../sass/custom/apps/_minutes.scss */
-#minute-edit form #top-widget > .button { background: #f1f1f1; border-color: #f1f1f1; color: black; width: 100%; cursor: pointer; height: 36px; line-height: 34px; width: 36px; border-right-style: hidden; border-left-style: hidden; border-top: 1px solid #d8d8d8; border-bottom: 1px solid #d8d8d8; /* $size: size of the button/trigger this dropdown is attached to $bg-color: background color of dropdown and entries $hover-color: background color of hovered entries $border-color: color of dropdown border, seperator and indicator arrow $offset: amount by which the dropdown is moved into its orientation $orientation: alignment of the dropdown to its button/trigger -> "left" or "right" */ position: relative; }
+#minute-edit form #top-widget > .button { background: #f1f1f1; border-color: #f1f1f1; color: black; width: 100%; cursor: pointer; height: 36px; line-height: 34px; width: 36px; border-right-style: hidden; border-left-style: hidden; border-top: 1px solid #d8d8d8; border-bottom: 1px solid #d8d8d8; /* $size: size of the button/trigger this dropdown is attached to $bg-color: background color of dropdown and entries $bg-color-hover: background color of hovered entries $border-color: color of dropdown border, seperator and indicator arrow $offset: amount by which the dropdown is moved into its orientation $orientation: alignment of the dropdown to its button/trigger -> "left" or "right" $color: text color of links $color-hover: text color of hovered links */ position: relative; }
 /* line 7, ../sass/custom/ui/_buttons.scss */
-#minute-edit form #top-widget > .button:hover { background: #d8d8d8; color: white; }
+#minute-edit form #top-widget > .button:hover { background: #d8d8d8; color: black; }
 /* line 94, ../sass/custom/apps/_minutes.scss */
 #minute-edit form #top-widget > .button:first-of-type { border-left: none; }
 /* line 95, ../sass/custom/apps/_minutes.scss */
 #minute-edit form #top-widget > .button:last-child { border-right: 1px solid #d8d8d8; }
-/* line 11, ../sass/custom/ui/_dropdown.scss */
+/* line 13, ../sass/custom/ui/_dropdown.scss */
 #minute-edit form #top-widget > .button > .dropdown { position: absolute; right: -1px; width: auto; z-index: 77777; display: none; border: none; padding-top: 11px; }
-/* line 20, ../sass/custom/ui/_dropdown.scss */
+/* line 22, ../sass/custom/ui/_dropdown.scss */
 #minute-edit form #top-widget > .button > .dropdown:before { /* add an arrow to the drop down menu */ content: ""; display: block; position: absolute; top: 2px; right: 8px; width: 0; border-width: 0 10px 10px; border-style: solid; border-color: #d8d8d8 transparent; }
-/* line 32, ../sass/custom/ui/_dropdown.scss */
+/* line 34, ../sass/custom/ui/_dropdown.scss */
 #minute-edit form #top-widget > .button > .dropdown > hr { padding: 0; margin: 0; height: 1px; border-bottom: none; }
-/* line 38, ../sass/custom/ui/_dropdown.scss */
-#minute-edit form #top-widget > .button > .dropdown > a { display: block; width: 100%; border: none; white-space: nowrap; font-size: 16px; font-weight: 400; height: 36px; line-height: 34px; background-color: #f1f1f1; margin: 0; padding: 0 16px; text-align: left; border-left: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8; }
-/* line 47, ../sass/custom/ui/_dropdown.scss */
-#minute-edit form #top-widget > .button > .dropdown > a:hover { background-color: #d8d8d8; }
-/* line 55, ../sass/custom/ui/_dropdown.scss */
+/* line 40, ../sass/custom/ui/_dropdown.scss */
+#minute-edit form #top-widget > .button > .dropdown > a { display: block; width: 100%; border: none; white-space: nowrap; font-size: 16px; font-weight: 400; height: 36px; line-height: 34px; color: #333333; background-color: #f1f1f1; margin: 0; padding: 0 16px; text-align: left; border-left: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8; }
+/* line 50, ../sass/custom/ui/_dropdown.scss */
+#minute-edit form #top-widget > .button > .dropdown > a:hover { color: #333333; background-color: #d8d8d8; }
+/* line 61, ../sass/custom/ui/_dropdown.scss */
 #minute-edit form #top-widget > .button > .dropdown > a:first-child { border-top: 1px solid #d8d8d8; }
-/* line 56, ../sass/custom/ui/_dropdown.scss */
+/* line 62, ../sass/custom/ui/_dropdown.scss */
 #minute-edit form #top-widget > .button > .dropdown > a:last-child { border-bottom: 1px solid #d8d8d8; }
-/* line 59, ../sass/custom/ui/_dropdown.scss */
+/* line 65, ../sass/custom/ui/_dropdown.scss */
 #minute-edit form #top-widget > .button:hover > .dropdown { display: block; }
 /* line 101, ../sass/custom/apps/_minutes.scss */
 #minute-edit form #save { margin-top: 1em; background: #3bbec0; border-color: #3bbec0; color: black; width: 100%; cursor: pointer; }
 /* line 7, ../sass/custom/ui/_buttons.scss */
-#minute-edit form #save:hover { background: #4ec4c6; color: white; }
+#minute-edit form #save:hover { background: #60cacc; color: white; }
 /* line 109, ../sass/custom/apps/_minutes.scss */
 #minute-edit .modal .close { color: #3bbec0; }
-/* line 110, ../sass/custom/apps/_minutes.scss */
-#minute-edit .modal .content { min-height: 10%; }
 /* line 111, ../sass/custom/apps/_minutes.scss */
+#minute-edit .modal .close:hover { color: #60cacc; }
+/* line 113, ../sass/custom/apps/_minutes.scss */
+#minute-edit .modal .content { min-height: 10%; }
+/* line 114, ../sass/custom/apps/_minutes.scss */
 #minute-edit .modal .field { width: auto; min-width: 0; max-width: none; padding-left: 0; padding-right: 0; }
 /* line 21, ../bower_components/gumby/sass/functions/_semantic-grid.scss */
 #minute-edit .modal .field > *:first-child { margin-left: 0; }
-@media only screen and (max-width: 767px) { /* line 111, ../sass/custom/apps/_minutes.scss */
+@media only screen and (max-width: 767px) { /* line 114, ../sass/custom/apps/_minutes.scss */
   #minute-edit .modal .field { width: auto; min-width: 0; margin-left: 0; margin-right: 0; } }
 /* line 38, ../sass/custom/ui/_forms.scss */
 #minute-edit .modal .field label { width: 23.40426%; height: 36px; line-height: 34px; }
@@ -5040,38 +5232,40 @@ body #body-wrapper { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEU
 #minute-edit .modal .field input, #minute-edit .modal .field textarea, #minute-edit .modal .field .nested { width: 74.46809%; }
 @media only screen and (max-width: 767px) { /* line 42, ../sass/custom/ui/_forms.scss */
   #minute-edit .modal .field input, #minute-edit .modal .field textarea, #minute-edit .modal .field .nested { float: left; margin-left: 0; width: 100%; } }
-/* line 112, ../sass/custom/apps/_minutes.scss */
+/* line 115, ../sass/custom/apps/_minutes.scss */
 #minute-edit .modal h1, #minute-edit .modal h2, #minute-edit .modal h3, #minute-edit .modal h4 h5, #minute-edit .modal h5 { text-align: center; margin-bottom: 12px; }
-/* line 113, ../sass/custom/apps/_minutes.scss */
+/* line 116, ../sass/custom/apps/_minutes.scss */
 #minute-edit .modal .button { background: #3bbec0; border-color: #3bbec0; color: black; width: 100%; cursor: pointer; margin-top: 20px; }
 /* line 7, ../sass/custom/ui/_buttons.scss */
-#minute-edit .modal .button:hover { background: #4ec4c6; color: white; }
-/* line 118, ../sass/custom/apps/_minutes.scss */
+#minute-edit .modal .button:hover { background: #60cacc; color: white; }
+/* line 121, ../sass/custom/apps/_minutes.scss */
 #minute-edit #requestmodal .content #vote input { width: 23.40426%; }
-@media only screen and (max-width: 767px) { /* line 118, ../sass/custom/apps/_minutes.scss */
+@media only screen and (max-width: 767px) { /* line 121, ../sass/custom/apps/_minutes.scss */
   #minute-edit #requestmodal .content #vote input { float: left; margin-left: 0; width: 100%; } }
-/* line 123, ../sass/custom/apps/_minutes.scss */
+/* line 126, ../sass/custom/apps/_minutes.scss */
 #minute-edit #reordermodal #reorderhead > div, #minute-edit #reordermodal #reorderbuffer > div { height: 36px; line-height: 34px; margin-bottom: 10px; }
-/* line 127, ../sass/custom/apps/_minutes.scss */
+/* line 130, ../sass/custom/apps/_minutes.scss */
 #minute-edit #reordermodal #reorderbuffer > div { border: 1px solid #d8d8d8; padding: 0 10px; cursor: pointer; }
-/* line 131, ../sass/custom/apps/_minutes.scss */
+/* line 134, ../sass/custom/apps/_minutes.scss */
 #minute-edit #reordermodal #reorderbuffer > div:active, #minute-edit #reordermodal #reorderbuffer > div.sortable-ghost { border-color: #3bbec0; }
-/* line 132, ../sass/custom/apps/_minutes.scss */
+/* line 135, ../sass/custom/apps/_minutes.scss */
 #minute-edit #reordermodal #reorderbuffer > div.sortable-ghost { opacity: .5; }
 
-/* line 156, ../sass/custom/apps/_minutes.scss */
+/* line 159, ../sass/custom/apps/_minutes.scss */
 .request-list .request { border: 1px solid #d8d8d8; margin-bottom: 10px; }
-/* line 160, ../sass/custom/apps/_minutes.scss */
+/* line 163, ../sass/custom/apps/_minutes.scss */
 .request-list .request .title { font-weight: bold; }
-/* line 161, ../sass/custom/apps/_minutes.scss */
+/* line 164, ../sass/custom/apps/_minutes.scss */
 .request-list .request .howmuchisthefish { font-weight: bold; }
-/* line 162, ../sass/custom/apps/_minutes.scss */
+/* line 165, ../sass/custom/apps/_minutes.scss */
 .request-list .request .description { margin-top: 0.2em; margin-bottom: 0.2em; -ms-word-break: break-all; word-break: break-all; word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; text-align: justify; }
-/* line 167, ../sass/custom/apps/_minutes.scss */
-.request-list .request .label { -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; }
-/* line 169, ../sass/custom/apps/_minutes.scss */
-.request-list .request .label.accpeted { background: #60cd9b; }
 /* line 170, ../sass/custom/apps/_minutes.scss */
-.request-list .request .label.denied { background: #e87352; }
+.request-list .request .label { -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; }
 /* line 172, ../sass/custom/apps/_minutes.scss */
-.request-list .request .edit { float: right; }
+.request-list .request .label.accpeted { background: #60cd9b; }
+/* line 173, ../sass/custom/apps/_minutes.scss */
+.request-list .request .label.denied { background: #e87352; }
+/* line 175, ../sass/custom/apps/_minutes.scss */
+.request-list .request .edit { float: right; color: #3bbec0; }
+/* line 178, ../sass/custom/apps/_minutes.scss */
+.request-list .request .edit:hover { color: #60cacc; }
