@@ -28,6 +28,11 @@
 		});
 
 		$("select.select2").select2();
+		$("#guests").select2({
+			tags:[],
+			formatNoMatches: function(term) { return "Namen eingeben und Enter drücken"; }
+		});
+		// multiple select2: focus lost => check if input has focus, if so restore focus (seems to be borken)
 
 		new Sortable($("#reorderbuffer")[0]);
 	});
@@ -74,11 +79,23 @@
 			</div>
 			<div class="field">
 				<label for="fsr">Anwesenheit</label>
-				<input id="fsr" type="text" />
+				<div class="nested">
+					<select class="select2" id="fsr" multiple>
+						<option value="Wassily">Wassily Kandinsky</option>
+						<option value="Wilhelm">Wilhelm Wagenfeld</option>
+						<option value="T">T. Lux Feininger</option>
+						<option value="Marcel">Marcel Breuer</option>
+						<option value="Walter">Walter Gropius</option>
+						<option value="Paul">Paul Klee</option>
+						<option value="Mies">Mies van der Rohe</option>
+					</select>
+				</div>
 			</div>
 			<div class="field">
-				<label for="guest">Gäste</label>
-				<textarea id="guest"></textarea>
+				<label for="guests">Gäste</label>
+				<div class="nested">
+					<input id="guests" class="select2" type="text" />
+				</div>
 			</div>
 
 

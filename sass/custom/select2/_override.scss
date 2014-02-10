@@ -1,7 +1,8 @@
-.select2-container {
+.select2-container, .select2-container-multi, .select2-container.select2-container-multi {
 	width: 100%;
 
-	.select2-choice {
+	.select2-choice, .select2-choices {
+		@include box-sizing(border-box);
 		@include line-and-height(height-calc($norm));
 		border: 1px solid $border-color;
 		background: $form-text-input-background;
@@ -31,19 +32,62 @@
 				}
 			}
 		}
+		.select2-search-field > input {
+			border: none !important;
+			margin: 0 !important;
+		}
+		.select2-search-choice {
+			margin: 4px 0 4px 4px;
+			$height: height-calc($norm) - /*margin*/ 8px;
+			padding: 0;
+			@include line-and-height($height);
+			@include box-shadow(none);
+			background: $grey;
+			border: none;
+			@include border-radius(0);
+
+			div { padding: 1px 5px 1px 20px; }
+			.select2-search-choice-close {
+				background: transparent;
+				top: 0;
+				left: 0;
+				font-size: $norm;
+				height: 100%;
+				width: 20px;
+				text-align: center;
+				padding: 1px 0;
+				color: shade($grey, 20%);
+				&:hover { color: black; }
+				&:after {
+					font-family: "entypo";
+					content: "#{$entypo-icon-cancel}";
+				}
+			}
+			&.select2-search-choice-focus {
+				background: hover-of($grey);
+				.select2-search-choice-close {
+					color: shade(hover-of($grey), 20%);
+					&:hover { color: black; }
+				}
+			}
+		}
 	}
 
 	&.select2-dropdown-open .select2-choice .select2-arrow b:after {
 		content: "#{$entypo-icon-up-open-big}";
 	}
 
-	&.select2-container-active .select2-choice {
-		border: 1px solid $turquoise;
-		@include box-shadow(none);
+	&.select2-container-active, &.select2-dropdown-open {
+		.select2-choice, .select2-choices {
+			border: 1px solid $turquoise;
+			@include box-shadow(none);
+		}
 	}
 
-	&.select2-dropdown-open.select2-container-active .select2-choice {
-		border-bottom: 1px solid $border-color;
+	&.select2-dropdown-open {
+		.select2-choice, .select2-choices {
+			border-bottom: 1px solid $border-color;
+		}
 	}
 
 	// &:hover, &.select2-dropdown-open {
@@ -96,5 +140,13 @@
 			background: none;
 			font-style: italic;
 		}
+	}
+}
+
+.select2-drop-multi  {
+	margin-top: 0;
+	
+	.select2-results .select2-no-results {
+		margin-top: 0;
 	}
 }

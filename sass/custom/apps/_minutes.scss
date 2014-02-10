@@ -95,6 +95,7 @@
 				&:last-child { border-right: 1px solid $border-color; }
 
 				@include dropdown($size, $color: $black, $color-hover: $black);
+				& > .dropdown > a:hover { text-decoration: underline; }
 			}
 		}
 
