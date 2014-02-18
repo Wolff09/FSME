@@ -21,172 +21,93 @@
 }
 
 #minute-view {
-	// TODO: proper red/green values for labels
+	$util-bg: light-of($grey);
+	$util-border-color: shade($grey, 5%);
+	$util-font-size: ($small + $norm + $norm)/3;
+	// $lighter-border-color: shade($grey, 5%);
 	@include last-man-standing;
+	@include row;
 
-	.top, .meta {
-		background: $white;
-		@include horizontal-padding(1.5em);
-	}
+	@mixin util-link {
+		color: $black;
+		background: inherit;
+		font-size: $util-font-size;
+		height: height-calc($util-font-size);
+		line-height: height-calc($util-font-size);
+		border: none;
+		padding: 0 8px;
+		margin-left: 5px;
 
-	.meta {
-		@include vertical-padding(.75em);
-		.field {
-			@include row("nested");
-			.head { @include column(3); }
-			.tail { @include column(9); }
-		}
-		.label { @include border-radius(0); }
-	}
-
-	.top {
-		@include vertical-padding(.25em);
-		margin-top: .5em;
-
-		&, p {
-			@include hyphenation;
-			text-align: justify;
-		}
-		.hideclose {
-			display: inline-block;
-			@include hidden(desktop);
-			i.icon-right-dir, i.icon-down-dir { color: #333; font-size: 80%; }
-		}
-		@include respond(all-phones) {
-			.inner, .removable { display: none; }
-			.icon-down-dir { display: none; }
-			&.active {
-				.inner { display: block; }
-				.icon-right-dir { display: none; }
-				.icon-down-dir { display: inline-block; }
-			}
-		}
-		// TODO: tyles for content
-	}
-}
-
-#minute-edit {
-	form {
-		padding: 1.5em;
-		background: $white;
-		.field { @include formfield; }
-
-		#top-widget {
-	  		margin-bottom: 10px; // hardcoded as in Gumby
-			display: table;
-			width: 100%;
-			& > .field, & > .button { display: table-cell; }
-			& > .field input { width: 100%; }
-			& > .button {
-				// make it look like a button...
-				@include button($grey);
-				// ...and adjust dimension
-				$size: height-calc($norm);
-				@include line-and-height($size);
-				width: $size;
-
-				// no border between two successive buttons
-				border-right-style: hidden;
-				border-left-style: hidden;
-				border-top: 1px solid $border-color;
-				border-bottom: 1px solid $border-color;
-				// first and last button, however, should be delimited
-				&:first-of-type { border-left: none; }
-				&:last-child { border-right: 1px solid $border-color; }
-
-				@include dropdown($size, $color: $black, $color-hover: $black);
-				& > .dropdown > a:hover { text-decoration: underline; }
-			}
-		}
-
-		#save {
-			margin-top: 1em;
-			@include button($turquoise);
+		&:hover {
+			background: $turquoise;
+			color: $black;
 		}
 	}
 
-	.modal {
-		// TODO: as global style?
-		.close {
-			color: $turquoise;
-			&:hover { color: hover-of($turquoise); }
+	@mixin request-styles {
+		.from {
+			font-style: italic;
 		}
-		.content { min-height: 10%; }
-		.field { @include formfield; }
-		h1, h2, h3, h4 h5, h5 { text-align: center; margin-bottom: 12px; }
-		.button { @include button($turquoise); margin-top: 20px; }
-	}
-
-	// TODO: linkmodal is borken for some reason (the input right align)
-
-	#requestmodal .content #vote input {
-		@include column(3);
-	}
-
-	#reordermodal {
-		#reorderhead > div, #reorderbuffer > div {
-			@include line-and-height(height-calc($norm));
-			margin-bottom: 10px;
+		.title, .howmuchisthefish {
+			font-weight: $font-weight-semibold;
 		}
-		#reorderbuffer > div {
-			border: 1px solid $border-color;
-			padding: 0 10px;
-			cursor: pointer;
-			&:active, &.sortable-ghost { border-color: $turquoise; }
-			&.sortable-ghost { opacity: .5; }
-	}
-
-
-
-		// & > .row { @include row("nested"); }
-		// .head {
-		// 	@include line-and-height(height-calc($norm));
-		// 	@include column(3);
-		// }
-		// .entry {
-		// 	@include column(9);
-		// 	@include line-and-height(height-calc($norm));
-		// 	border: 1px solid $border-color;
-		// 	padding: 0 10px;
-		// 	margin-bottom: 10px;
-		// 	cursor: pointer;
-		// 	&:active, &.sortable-ghost { border-color: $turquoise; }
-		// 	&.sortable-ghost { opacity: .5; }
-		// }
-	}
-}
-
-.request-list {
-	.request {
-		border: 1px solid $border-color;
-		margin-bottom: 10px;
-		@extend .padding;
-		.title { font-weight: bold; }
-		.howmuchisthefish { font-weight: bold; }
 		.description {
-			@include vertical-margin(.2em);
-			@include hyphenation;
 			text-align: justify;
+			@include vertical-margin($gutter-in-px/4);
+			@include hyphenation;
 		}
 		.label {
 			@include border-radius(0);
-			&.accpeted { @extend .success; background: $green; }
-			&.denied { @extend .danger; background: $red; }
+			.accpeted { @extend .success; }
+			.denied { @extend .danger; }
 		}
 		.edit {
 			float: right;
+			font-size: $util-font-size;
 			color: $turquoise;
-			&:hover { color: hover-of($turquoise); }
+			&:hover { text-decoration: underline; }
+		}
+	}
+
+	@mixin content-styles {
+		// TODO: content styles
+		:last-child { margin-bottom: 0; }
+		ol, ul { list-style-position: inside; }
+	}
+
+	.top {
+		@include row("nested");
+		background: $white;
+		margin-top: $gutter-in-px;
+		&:first-of-type { margin-top: 0; }
+
+		h2, .content, .util, .request {
+			@include horizontal-padding($gutter-in-px);
+		}
+		.content {
+			padding-top: $gutter-in-px/4;
+			margin-bottom: $gutter-in-px*3/4;
+			text-align: justify;
+			@include hyphenation;
+			@include content-styles;
+		}
+		&#meta .content .entry {
+			@include row("nested");
+			line-height: height-calc($norm);
+			.name { @include column(4); }
+			.value { @include column(8); }
+		}
+		.util {
+			background: $util-bg;
+			border-top: 1px solid $util-border-color;
+			text-align: right;
+			a { @include util-link; }
+		}
+		.request {
+			border: 1px solid $util-border-color;
+			margin: $gutter-in-px;
+			@include vertical-padding($gutter-in-px/2);
+			@include request-styles;
 		}
 	}
 }
-
-// ul.util-buttons {
-// 	@include row("nested");
-// 	& > li > a { @include button($grey); }
-// 	&.two > li, & > li { @include column(6); }
-// 	&.three > li { @include column(4); }
-// 	&.four > li { @include column(3); }
-// TODO: why does gumy don't do this for us?
-// 	& > li:first-child { margin-left: 0; } 
-// }

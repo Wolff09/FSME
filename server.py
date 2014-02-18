@@ -52,9 +52,9 @@ def addr_detail(matchdict):
 def prot_list(matchdict):
 	return {'prots': prots}
 
-def protokoll_view(matchdict):
-	id = int(matchdict['id'] if matchdict and 'id' in matchdict else 1)
-	return {'prot': prots[id] if id >= 0 and id < len(prots) else prots[0], 'fsr': fsr, 'guest': guest}
+#def protokoll_view(matchdict):
+#	id = int(matchdict['id'] if matchdict and 'id' in matchdict else 1)
+#	return {'prot': prots[id] if id >= 0 and id < len(prots) else prots[0], 'fsr': fsr, 'guest': guest}
 
 
 ######################## configure views #########################
@@ -66,7 +66,7 @@ def register(config):
 	add(config, '/addr/change', 'address_form')
 	add(config, '/addr/{id}', 'address_detail', addr_detail)
 	add(config, '/prot/', 'protokoll_home', prot_list)
-	add(config, '/prot/{id}', 'protokoll_view', protokoll_view)
+	add(config, '/prot/{id}', 'protokoll_view/base')
 	add(config, '/prot/add/', 'protokoll_add')
 	add(config, '/prot/change/', 'protokoll_change')
 

@@ -1,0 +1,19 @@
+<div id="top{{x}}" class="top">
+	<!-- HEADLINE -->
+	<h2>TOPXX: lorem ipsum dolor sit amet</h2>
+
+	<!-- CONTENT -->
+	<div class="content">
+		{{ lipsum(3) }}
+	</div>
+
+	<!-- REQUESTS -->
+	{% include 'protokoll_view/request.html' %}
+	{% include 'protokoll_view/request.html' %}
+
+	<!-- UTIL -->
+	<div class="util">
+		<a href="/prot/change/request">Antrag hinzufügen</a>
+		<a href="/prot/change/top">Bearbeiten</a>
+	</div>
+</div>

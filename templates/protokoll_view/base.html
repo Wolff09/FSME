@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block extra_style %}
+{% endblock extra_style %}
+
+{% block extra_js %}
+{% endblock extra_js %}
+
+{% block body %}
+	<div id="minute-view">
+		<h1>Protokoll vom DD.MM.YYYY</h1>
+
+		{% include 'protokoll_view/meta.html' %}
+		{% include 'protokoll_view/topiclist.html' %}
+
+		{% for id in range(4) %}
+			{% include 'protokoll_view/topic.html' %}
+		{% endfor %}
+{% endblock body %}
