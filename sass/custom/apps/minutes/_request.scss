@@ -14,6 +14,7 @@
 		.button { @include button($turquoise); }
 
 		.dosh {
+			// TODO: is the display of "Cent" too much of a Hack?
 			position: absolute;
 			input { width: 100%; margin-left: 0; padding-right: 50px; }
 			&:after {

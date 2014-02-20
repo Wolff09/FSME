@@ -5324,11 +5324,11 @@ body #body-wrapper { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEU
 #minute-request form .button:hover { background: #60cacc; color: white; }
 /* line 16, ../sass/custom/apps/minutes/_request.scss */
 #minute-request form .dosh { position: absolute; }
-/* line 18, ../sass/custom/apps/minutes/_request.scss */
-#minute-request form .dosh input { width: 100%; margin-left: 0; padding-right: 50px; }
 /* line 19, ../sass/custom/apps/minutes/_request.scss */
+#minute-request form .dosh input { width: 100%; margin-left: 0; padding-right: 50px; }
+/* line 20, ../sass/custom/apps/minutes/_request.scss */
 #minute-request form .dosh:after { content: "Cent"; position: absolute; right: 10px; height: 36px; line-height: 34px; color: #d8d8d8; }
-/* line 29, ../sass/custom/apps/minutes/_request.scss */
-#minute-request.edit .new { display: none; }
 /* line 30, ../sass/custom/apps/minutes/_request.scss */
+#minute-request.edit .new { display: none; }
+/* line 31, ../sass/custom/apps/minutes/_request.scss */
 #minute-request.new .edit { display: none; }
