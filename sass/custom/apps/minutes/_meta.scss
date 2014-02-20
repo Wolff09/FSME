@@ -1,0 +1,22 @@
+#minute-meta {
+	@include row;
+
+	form {
+		padding: $gutter-in-px;
+		background: $white;
+		.field {
+			@include formfield;
+
+			.radio { @include column(4); }
+			.radio span {
+				margin-right: 5px;
+				@include border-radius(0);
+				i.icon-dot::before { content: "#{$entypo-icon-check}"; }
+			}
+		}
+		.save.button { @include button($turquoise); }
+	}
+
+	&.change { .new, .new.button { display: none; }}
+	&.new { .change, .change.button { display: none; }}
+}

@@ -1,25 +1,3 @@
-/*****************************************************************************/
-/********************************** MINUTES **********************************/
-/*****************************************************************************/
-
-#minutes-list {
-	@include table($table-bgcolor, $yellow,
-		$body-font-color, $norm*0.9);
-
-	th.bool { width: 15%; }
-	th.date { width: 15%; }
-	// th.name { width: 25%; }
-
-	th, td {
-		&.removable { @include hidden(all-phones); }
-		&.xremovable {
-			@include respond("max-width: 575px") {
-				display: none;
-			}
-		}
-	}
-}
-
 #minute-view {
 	$util-bg: light-of($grey);
 	$util-border-color: shade($grey, 5%);
@@ -63,6 +41,7 @@
 		}
 		.edit {
 			float: right;
+			margin-left: 5px;
 			font-size: $util-font-size;
 			color: $turquoise;
 			&:hover { text-decoration: underline; }
@@ -97,6 +76,9 @@
 			.name { @include column(4); }
 			.value { @include column(8); }
 		}
+		&#toplist .content ol {
+			margin-left: 0;
+		}
 		.util {
 			background: $util-bg;
 			border-top: 1px solid $util-border-color;
@@ -109,5 +91,22 @@
 			@include vertical-padding($gutter-in-px/2);
 			@include request-styles;
 		}
+	}
+
+	&.no-utils { .util, .edit { display: none; }}
+
+	.modal {
+		.content { min-height: 150px; }
+		.button { @include button($turquoise); margin-top: $gutter-in-px; }
+		.close {
+			color: $turquoise;
+			i { @include horizontal-margin(3px); }
+		}
+		.close:hover {
+			color: $white;
+			background: $turquoise;
+			@include border-radius(100px);
+		}
+		h2 { padding-bottom: $gutter-in-px; }
 	}
 }

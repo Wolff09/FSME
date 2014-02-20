@@ -1,1 +1,70 @@
-request.html
+{% extends "base.html" %}
+
+{% block extra_style %}
+{% endblock extra_style %}
+
+{% block extra_js %}
+<script src="/static/bower_components/select2/select2.js"></script>
+
+<script type="text/javascript">
+// select2 config as suggested here: https://github.com/ivaynberg/select2/issues/521#issuecomment-18642522
+$("#from").select2({
+	createSearchChoice: function(term, data) { 
+		if ($(data).filter(function() { return this.text.localeCompare(term)===0; }).length===0) {
+			return {id:term, text:term};} 
+		},
+
+		data: [
+			/* TODO (integration):
+			 * Put proper predifined selection here as {id,text} pairs.
+			 * The <id> is the value stored to the underlying text field,
+			 * while <text> is displayed for the corresponding <id>.
+			 */
+			{id:'p_ulrich007', text:'Penis Ulrich'}, 
+			{id:'r_kurva11', text:'Rushla Kurva'},
+			{id:'p_kacke10', text:'Penis Kacke'},
+			{id:'e_packe14', text:'Enis Packe'}
+		]
+	});
+</script>
+{% endblock extra_js %}
+
+{% block body %}
+	<div id="minute-request" class="edit">
+		<h1>
+			Antrag
+			<span class="new">anlegen</span>
+			<span class="edit">bearbeiten</span></h1>
+
+		<form>
+			<div class="field">
+				<label for="from">Antragsteller</label>
+				<div class="nested">
+					<input id="from" class="select2" type="text" />
+				</div>
+			</div>
+			<div class="field">
+				<label for="howmuch">Betrag</label>
+				<div class="nested dosh">
+					<input id="howmuch" type="text" placeholder="nur für Finanzanträge" />
+				</div>
+			</div>
+			<div class="field">
+				<label for="description">Beschreibung</label>
+				<textarea id="description" type="text"></textarea>
+			</div>
+			<div class="field">
+				<label for="title">Angenommen</label>
+				<input id="title" type="text" value="TODO: checkbox in nice (slider/toggle)" />
+			</div>
+			<div class="triple field">
+				<label for="vote_yes">Abstimmung</label>
+				<input id="vote_yes" type="text" placeholder="dafür" />
+				<input id="vote_no" type="text" placeholder="dagegen" />
+				<input id="vote_wayne" type="text" placeholder="enthalten" />
+			</div>
+
+			<input class="button new" type="submit" value="Hinzufügen" />
+			<input class="button edit" type="submit" value="Änderung übernehmen" />
+		</form>
+{% endblock body %}

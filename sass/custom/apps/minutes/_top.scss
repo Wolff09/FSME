@@ -1,0 +1,16 @@
+
+#minute-top {
+	@include row;
+
+	form {
+		@include row;
+		background: $white;
+		padding: $gutter-in-px;
+
+		.field { @include formfield; }
+		.button { @include button($turquoise); }
+	}
+
+	&.edit .new { display: none; }
+	&.new .edit { display: none; }
+}

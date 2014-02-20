@@ -67,8 +67,12 @@ def register(config):
 	add(config, '/addr/{id}', 'address_detail', addr_detail)
 	add(config, '/prot/', 'protokoll_home', prot_list)
 	add(config, '/prot/{id}', 'protokoll_view/base')
-	add(config, '/prot/add/', 'protokoll_add')
-	add(config, '/prot/change/', 'protokoll_change')
+	add(config, '/prot/change/meta', 'protokoll_change/meta')
+	add(config, '/prot/change/request', 'protokoll_change/request')
+	add(config, '/prot/change/top', 'protokoll_change/top')
+
+	# add(config, '/prot/add/', 'protokoll_add')
+	# add(config, '/prot/change/', 'protokoll_change')
 
 
 ######################## configure server ########################

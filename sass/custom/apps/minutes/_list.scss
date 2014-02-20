@@ -1,0 +1,18 @@
+
+#minutes-list {
+	@include table($table-bgcolor, $yellow,
+		$body-font-color, $norm*0.9);
+
+	th.bool { width: 15%; }
+	th.date { width: 15%; }
+	// th.name { width: 25%; }
+
+	th, td {
+		&.removable { @include hidden(all-phones); }
+		&.xremovable {
+			@include respond("max-width: 575px") {
+				display: none;
+			}
+		}
+	}
+}
