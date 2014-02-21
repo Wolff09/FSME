@@ -45,8 +45,8 @@
 
 <body>
 	<div id="body-wrapper">
-		{% include 'navi.html' %}
-		{% block body%}{% endblock %}
+		{% block navi %}{% include 'navi.html' %}{% endblock %}
+		{% block body %}{% endblock %}
 	</div>
 
 	<!-- Grab Google CDN's jQuery, fall back to local if offline -->

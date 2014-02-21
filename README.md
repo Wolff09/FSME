@@ -12,6 +12,7 @@ Brief overview of used stuff:
 - [jQuery](http://jquery.com)
 - [Redactor.js](dactorjs.com)
 - [Sortable](http://rubaxa.github.io/Sortable/)
+- Select2
 - Pixel Kit [Modern Touch](http://pixelkit.com/previews/flat-ui-kit/) (as source of inspiration)
 
 
@@ -20,16 +21,12 @@ To run the webserver install jinja2 and pyramid pylons [Jinja2](http://jinja.poc
 
 What to do:
 
-- evaluate select2 (customizing capabilities)
-- replace selectize.js by select2.js
+- select2: nach oben aufklappen ist borken (nach unten ist okay)
 - Getränke styles
-- fix buges everywhere
-    + left: 2px in protololl_change (remove?)
 - test cross browser compatibiliy
 - maybe change line-height for forms
 - refactor sass
     + its messy by now
     + move repetetive styles to more general place
     + abstract repetetive directives to mixins
-    + move colors to funtions
     + file names are not comprehensible

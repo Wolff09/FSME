@@ -1,0 +1,31 @@
+
+#login {
+	.content {
+		min-height: 0;
+	}
+
+	form { 
+		margin-top: $gutter-in-px;
+
+		.field {
+			margin-bottom: $gutter-in-px;
+			input {
+				@extend .input;
+			}
+			label, input {
+				@include row("nested");
+				@include line-and-height(height-calc($norm));
+				text-align: center;
+			}
+			label, input {
+				// this is akwardly overriden when put into the above directive
+				width: 100%;
+			}
+		}
+
+		.button {
+			@include button($turquoise);
+			margin-top: $gutter-in-px;
+		}
+	}
+}

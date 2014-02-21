@@ -36,8 +36,8 @@
 		}
 		.label {
 			@include border-radius(0);
-			.accpeted { @extend .success; }
-			.denied { @extend .danger; }
+			&.accpeted { @extend .success; }
+			&.denied { @extend .danger; }
 		}
 		.edit {
 			float: right;
@@ -70,11 +70,11 @@
 			@include hyphenation;
 			@include content-styles;
 		}
-		&#meta .conten {
+		&#meta .content {
 			.label {
 				@include border-radius(0);
-				.yes { @extend .success; }
-				.no { @extend .danger; }
+				&.yes { @extend .success; }
+				&.no { @extend .danger; }
 			}
 			.entry {
 				@include row("nested");
