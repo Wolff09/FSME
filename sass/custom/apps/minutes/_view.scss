@@ -70,11 +70,18 @@
 			@include hyphenation;
 			@include content-styles;
 		}
-		&#meta .content .entry {
-			@include row("nested");
-			line-height: height-calc($norm);
-			.name { @include column(4); }
-			.value { @include column(8); }
+		&#meta .conten {
+			.label {
+				@include border-radius(0);
+				.yes { @extend .success; }
+				.no { @extend .danger; }
+			}
+			.entry {
+				@include row("nested");
+				line-height: height-calc($norm);
+				.name { @include column(4); }
+				.value { @include column(8); }
+			}
 		}
 		&#toplist .content ol {
 			margin-left: 0;

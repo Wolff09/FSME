@@ -54,8 +54,13 @@ $("#from").select2({
 				<textarea id="description" type="text"></textarea>
 			</div>
 			<div class="field">
-				<label for="title">Angenommen</label>
-				<input id="title" type="text" value="TODO: checkbox in nice (slider/toggle)" />
+				<label for="accepted">Angenommen</label>
+				<div class="nested slider">
+					<label for="accepted" onclick="">
+						<input id="accepted" type="checkbox">
+						<a></a><div>Nein</div><div>Ja</div>
+					</label>
+				</div>
 			</div>
 			<div class="triple field">
 				<label for="vote_yes">Abstimmung</label>

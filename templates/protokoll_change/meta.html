@@ -57,17 +57,13 @@
 				</div>
 			</div>
 			<div class="field">
-				<!-- TODO: as checkbox with cool styles (slider/toggle-switch) -->
 				<label for="cando">Beschlussfähig</label>
-				<label class="radio checked" for="cando">
-					<input name="radio" id="cando" value="1" type="radio" checked="checked">
-					<span></span>
-					<b>Ja</b>
-				</label>
-				<label class="radio" for="cantdo">
-					<input name="radio" id="cantdo" value="0" type="radio">
-					<span></span> Nein
-				</label>
+				<div class="nested slider">
+					<label for="cando" onclick="">
+						<input id="cando" type="checkbox">
+						<a></a><div>Nein</div><div>Ja</div>
+					</label>
+				</div>
 			</div>
 			<div class="field">
 				<label for="fsr">Anwesenheit</label>
