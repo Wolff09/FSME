@@ -55,37 +55,37 @@ $address-detail-qrcode-size-active: 300px !default;
 	}
 }
 
-#address-form {
-	background: $address-book-bg;
-	padding: $med;
-	@include last-man-standing("margin");
-	label.inline { @extend .padding-right; }
+// #address-form {
+// 	background: $address-book-bg;
+// 	padding: $med;
+// 	@include last-man-standing("margin");
+// 	label.inline { @extend .padding-right; }
 
-	.field {
-		@include row();
-		@include horizontal-padding(0); // TODO: global forms style??
-		@include vertical-padding($xsmall); // TODO: global forms style
-		label {
-			@include column(2);
-			@extend .inline;
-			@include line-and-height(height-calc($norm));
-		}
-		input, textarea {
-			@include column(10);
-			@extend .input;
-		}
-		input { @extend .text; }
-		textarea { @extend .textarea; }
-	}
+// 	.field {
+// 		@include row();
+// 		@include horizontal-padding(0); // TODO: global forms style??
+// 		@include vertical-padding($xsmall); // TODO: global forms style
+// 		label {
+// 			@include column(2);
+// 			@extend .inline;
+// 			@include line-and-height(height-calc($norm));
+// 		}
+// 		input, textarea {
+// 			@include column(10);
+// 			@extend .input;
+// 		}
+// 		input { @extend .text; }
+// 		textarea { @extend .textarea; }
+// 	}
 
-	#save {
-		@include column(4);
-		@include push(8);
-		@extend .medium, .btn;
-		font-weight: $font-weight-regular;
-		margin-top: $small;
-		background: $turquoise;
-		@include color-of($turquoise);
-		&:hover { background: dark-of($turquoise); }
-	}
-}
+// 	#save {
+// 		@include column(4);
+// 		@include push(8);
+// 		@extend .medium, .btn;
+// 		font-weight: $font-weight-regular;
+// 		margin-top: $small;
+// 		background: $turquoise;
+// 		@include color-of($turquoise);
+// 		&:hover { background: dark-of($turquoise); }
+// 	}
+// }

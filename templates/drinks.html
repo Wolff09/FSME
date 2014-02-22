@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block extra_js %}
+{% endblock extra_js %}
+
+{% block body %}
+	<div id="beverages-tab">
+		<h1>Meine Rechnungen</h1>
+
+		<div class="tab">
+			<h2>Laufende Rechnung</h2>
+			<p>Abstinent? Du hast nichts auf der laufenden Rechnung.</p>
+		</div>
+
+		<div class="tab">
+			<h2>Offene Rechnungen</h2>
+			<!-- <p>Vorbildlich! Du hast keine offenen Rechnungen (Schulden) bei der Fachschaft.</p> -->
+			<div class="tab-table">
+				<div class="thead">
+					<div class="tr">
+						<div class="th date">Gesamt</div>
+						<div class="th status"></div>
+						<div class="th dosh">345€</div>
+					</div>
+				</div>
+				<div class="tbody" id="address-filterable">
+					<a href="#" class="tr">
+						<div class="td date">22. August 2013</div>
+						<div class="td status"></div>
+						<div class="td dosh">23€</div>
+					</a>
+					<a href="#" class="tr">
+						<div class="td date">17. Juli 2012</div>
+						<div class="td status">
+							<span class="label payed" title="Von dir als bezahlt markiert - muss noch vom Getränkereferent bestätigt werden.">bezahlt</span>
+						</div>
+						<div class="td dosh">77€</div>
+					</a>
+					<a href="#" class="tr">
+						<div class="td date">17. Juli 1998</div>
+						<div class="td status"></div>
+						<div class="td dosh">77DM</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab">
+			<h2>Bezahlte Rechnungen</h2>
+			<div class="tab-table">
+				<div class="thead">
+					<div class="tr">
+						<div class="th date">Gesamt</div>
+						<div class="th dosh">2489DM</div>
+					</div>
+				</div>
+				<div class="tbody" id="address-filterable">
+					<a href="#" class="tr">
+						<div class="td date">22. August 1995</div>
+						<div class="td dosh">687DM</div>
+					</a>
+					<a href="#" class="tr">
+						<div class="td date">17. Juli 1995</div>
+						<div class="td dosh">435DM</div>
+					</a>
+					<a href="#" class="tr">
+						<div class="td date">17. Juli 1994</div>
+						<div class="td dosh">345DM</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock body %}

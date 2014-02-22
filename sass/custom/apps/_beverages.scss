@@ -1,0 +1,29 @@
+
+#beverages-tab {
+	@include row;
+	@include last-man-standing;
+	
+	.tab {
+		// compare to minutes.top
+		@include row("nested");
+		background: $white;
+		margin-top: $gutter-in-px;
+		&:first-of-type { margin-top: 0; }
+		@include horizontal-padding($gutter-in-px);
+		
+		// same as in address-book -> set as defaults
+		.tab-table {
+			@include narrow-table($white, $yellow, $body-font-color, $norm*0.9);
+			.thead .tr .th, .tbody .tr .td {
+				&.dosh, &.status { width: 15%; text-align: right; }
+				&.status {
+					.label {
+						@include border-radius(0);
+						&.payed { @extend .success; }
+					}
+				}
+			}
+		}
+	}
+}
+

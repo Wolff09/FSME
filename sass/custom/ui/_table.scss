@@ -1,3 +1,5 @@
+// TODO: default values for params
+
 @mixin table($bg, $hover, $font-color, $font-size) {
 	// TODO: defaults for vars
 	display: table; @extend table;
@@ -29,4 +31,10 @@
 		background: $hover;
 		@include color-of($hover);
 	}
+}
+
+@mixin narrow-table($bg, $hover, $font-color, $font-size) {
+	@include table($bg, $hover, $font-color, $font-size);
+	.thead .tr .th { @include vertical-padding(0px); }
+	.tbody .tr .td { @include vertical-padding(5px); }
 }
