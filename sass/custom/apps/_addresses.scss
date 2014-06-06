@@ -1,7 +1,3 @@
-/**************************************************************************************/
-/************************************ ADDRESS BOOK ************************************/
-/**************************************************************************************/
-
 $address-book-bg: $table-bgcolor !default;
 $address-book-tbody-bg-hover: $yellow !default;
 $address-book-tbody-font-size: $norm*0.9;
@@ -15,14 +11,24 @@ $address-detail-qrcode-size-active: 300px !default;
 }
 
 #address-book {
-	@include table($address-book-bg, $address-book-tbody-bg-hover,
-		$body-font-color, $address-book-tbody-font-size);
-
-	.tag-field { display: none; }
-	.td.email, .td.phone, .th.email, .th.phone {
-		// TODO: use @include hidden/visible
-		display: none;
-		@include respond(desktop) { display: table-cell; }
+	@include last-man-standing("margin");
+	// compare to minutes.top
+	@include row("nested");
+	background: $white;
+	margin-top: $gutter-in-px;
+	@include vertical-padding($gutter-in-px);
+	@include horizontal-padding($gutter-in-px);
+	
+	// same as in address-book -> set as defaults
+	.address-table {
+		@include narrow-table($white, $yellow, $body-font-color, $norm*0.9);
+		margin-bottom: 0;
+		.tag-field { display: none; }
+		.td.email, .td.phone, .th.email, .th.phone {
+			// TODO: use @include hidden/visible
+			display: none;
+			@include respond(desktop) { display: table-cell; }
+		}
 	}
 }
 

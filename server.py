@@ -73,6 +73,7 @@ def register(config):
 	add(config, '/login', 'login')
 	add(config, '/profile', 'profile')
 	add(config, '/drinks', 'drinks')
+	add(config, '/drinks/rechnung', 'drinks_rechnung')
 
 	# add(config, '/prot/add/', 'protokoll_add')
 	# add(config, '/prot/change/', 'protokoll_change')

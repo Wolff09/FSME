@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block extra_js %}
+{% endblock extra_js %}
+
+{% block body %}
+	<div id="beverages-tab">
+		<h1>Rechnung vom DD.MM.YYYY</h1>
+
+		<div class="shout">
+			<a class="button" href="#">als bezahlt markieren</a>
+		</div>
+
+		<div class="tab">
+			<div class="tab-table">
+				<div class="thead">
+					<div class="tr">
+						<div class="th left">Getränk</div>
+						<div class="th center">Datum</div>
+						<div class="th center">Anzahl</div>
+						<div class="th dosh">Stückpreis</div>
+						<div class="th dosh">Gesamt</div>
+					</div>
+				</div>
+				<div class="tbody">
+					<a href="#" class="tr">
+						<div class="td left">Club Mate</div>
+						<div class="td center">lol</div>
+						<div class="td center">77</div>
+						<div class="td dosh">1€</div>
+						<div class="td dosh">77€</div>
+					</a>
+					<a href="#" class="tr">
+						<div class="td left">Club Mate</div>
+						<div class="td center">lol</div>
+						<div class="td center">77</div>
+						<div class="td dosh">1€</div>
+						<div class="td dosh">77€</div>
+					</a>
+					<a href="#" class="tr">
+						<div class="td left">Club Mate</div>
+						<div class="td center">lol</div>
+						<div class="td center">77</div>
+						<div class="td dosh">1€</div>
+						<div class="td dosh">77€</div>
+					</a>
+					<a href="#" class="tr">
+						<div class="td left">Club Mate</div>
+						<div class="td center">lol</div>
+						<div class="td center">77</div>
+						<div class="td dosh">1€</div>
+						<div class="td dosh">77€</div>
+					</a>
+					<a href="#" class="tr">
+						<div class="td left">Club Mate</div>
+						<div class="td center">lol</div>
+						<div class="td center">77</div>
+						<div class="td dosh">1€</div>
+						<div class="td dosh">77€</div>
+					</a>
+				</div>
+				<div class="thead">
+					<div class="tr">
+						<div class="th left"></div>
+						<div class="th center"></div>
+						<div class="th status"></div>
+						<div class="th status">
+							<span class="label payed" title="Von dir als bezahlt markiert - muss noch vom Getränkereferent bestätigt werden.">bezahlt</span>
+						</div>
+						<div class="th dosh">777€</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock body %}
