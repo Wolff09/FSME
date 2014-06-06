@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block extra_js %}
+<!-- Bower install selectize -->
+<script src="/static/js/selectize.min.js"></script>
+<script src="/static/js/selectnice.js"></script>
+<script type="text/javascript">
+	$('#tags').selectnice("tags", {
+		tags: [
+			"Henri Rousseau",
+			"Franz Marc",
+			"August Macke",
+			"Hans Baldung",
+			"Eugen von Kahler",
+			"Vincent van Gogh",
+		]
+		// options: [
+		// 	{value: 1, text: "Henri Rousseau"},
+		// 	{value: 2, text: "Franz Marc"},
+		// 	{value: 3, text: "August Macke"},
+		// 	{value: 4, text: "Hans Baldung"},
+		// 	{value: 5, text: "Eugen von Kahler"},
+		// 	{value: 6, text: "Vincent van Gogh"},
+		// ]
+	});
+</script>
+{% endblock extra_js %}
+
+
+{% block content %}
+	<h1>tags</h1>
+
+	<form class="panel">
+		<div class="field" style="overflow: visible">
+			<label for="tags">Tags</label>
+			<div class="nested">
+				<input id="tags">
+			</div>
+		</div>
+		<br><br><br><br><br><br><br><br><br><br><br><br>
+	</form>
+{% endblock content %}

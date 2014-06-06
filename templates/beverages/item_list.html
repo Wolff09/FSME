@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block extra_js %}
+<script src="/static/js/selectize.min.js"></script>
+<script src="/static/js/selectnice.js"></script>
+<script type="text/javascript">
+	$('#livesearch').selectnice("live", {
+		tags: ["Mate", "Cola", "Bier", "Limmo", "Bio Limmo", "Saft"],
+		objs: ".list-table .tbody .tr"
+	});
+</script>
+{% endblock extra_js %}
+
+{% block content %}
+	<h1>Getränke</h1>
+
+	<div class="one buttons">
+		<a href="/">Neues Getränk hinzufügen</a>
+	</div>
+
+	<div class="live"><input id="livesearch"></div>
+
+	<div class="list-table">
+		<div class="thead">
+			<div class="tr">
+				<div class="th w-20 left">Name</div>
+				<div class="th w-20 center">Inhalt</div>
+				<div class="th w-20 center">Verfügbar</div>
+				<div class="th w-20 right">Preis intern</div>
+				<div class="th w-20 right">Preis extern</div>
+			</div>
+		</div>
+		<div class="tbody">
+			<a class="tr" href="#">
+				<div class="td w-20 left">Mate</div>
+				<div class="td w-20 center">Inhalt</div>
+				<div class="td w-20 center"><i class="icon-check"></i></div>
+				<div class="td w-20 right">Preis intern</div>
+				<div class="td w-20 right">Preis extern</div>
+			</a>
+			<a class="tr" href="#">
+				<div class="td w-20 left">Cola</div>
+				<div class="td w-20 center">Inhalt</div>
+				<div class="td w-20 center"><i class="icon-check"></i></div>
+				<div class="td w-20 right">Preis intern</div>
+				<div class="td w-20 right">Preis extern</div>
+			</a>
+			<a class="tr" href="#">
+				<div class="td w-20 left">Bier</div>
+				<div class="td w-20 center">Inhalt</div>
+				<div class="td w-20 center"><i class="icon-check"></i></div>
+				<div class="td w-20 right">Preis intern</div>
+				<div class="td w-20 right">Preis extern</div>
+			</a>
+			<a class="tr" href="#">
+				<div class="td w-20 left">Limmo</div>
+				<div class="td w-20 center">Inhalt</div>
+				<div class="td w-20 center"><i class="icon-cancel"></i></div>
+				<div class="td w-20 right">Preis intern</div>
+				<div class="td w-20 right">Preis extern</div>
+			</a>
+			<a class="tr" href="#">
+				<div class="td w-20 left">Bio Limmo</div>
+				<div class="td w-20 center">Inhalt</div>
+				<div class="td w-20 center"><i class="icon-cancel"></i></div>
+				<div class="td w-20 right">Preis intern</div>
+				<div class="td w-20 right">Preis extern</div>
+			</a>
+			<a class="tr" href="#">
+				<div class="td w-20 left">Saft</div>
+				<div class="td w-20 center">Inhalt</div>
+				<div class="td w-20 center"><i class="icon-check"></i></div>
+				<div class="td w-20 right">Preis intern</div>
+				<div class="td w-20 right">Preis extern</div>
+			</a>
+		</div>
+	</div>
+{% endblock content %}

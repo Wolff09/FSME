@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>$Getränkename</h1>
+
+	<div class="two buttons">
+		<a href="/">Bearbeiten</a>
+		<a class="switch" gumby-trigger="#confirm-deletion" href="#">Löschen</a>
+	</div>
+
+	<div class="detail-table">
+		<div class="entry">
+			<div class="key">Name:</div>
+			<div class="value">__name__</div>
+		</div>
+		<div class="entry">
+			<div class="key">Beschreibung:</div>
+			<div class="value">__description__</div>
+		</div>
+		<div class="entry">
+			<div class="key">Inhalt:</div>
+			<div class="value">__amount__</div>
+		</div>
+		<div class="entry">
+			<div class="key">Interner Preis:</div>
+			<div class="value">__preis_low__</div>
+		</div>
+		<div class="entry">
+			<div class="key">Externer Preis:</div>
+			<div class="value">__preis_high__</div>
+		</div>
+		<div class="entry">
+			<div class="key">Verfügbar:</div>
+			<div class="value">
+				__yes/no__
+			</div>
+		</div>
+		<div class="entry">
+			<div class="key"> Logo:</div>
+			<div class="value">
+				<img src="http://dummyimage.com/50x50/000000/fff.png&text=logo">
+			</div>
+		</div>
+	</div>
+
+	<!-- this is a default gumby modal template -> maybe you want some abstraction -->
+	<div class="modal" id="confirm-deletion">
+		<div class="content">
+			<a class="close switch" gumby-trigger="|#confirm-deletion"><i class="icon-cancel" /></i></a>
+			<div class="row">
+				<div class="ten columns centered text-center">
+					<h2>Sicher?</h2>
+					<p>Möchtest du <b>__getränkname__</b> wirklich unwiderruflich löschen?</p>
+					<p class="button">
+						<a href="/" class="switch" gumby-trigger="|#confirm-deletion">Löschen!</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>$Firstname $Lastname</h1>
+	
+	<!-- if you are allowed to delete -->
+	<!--<div class="two buttons">
+		<a href="/">Bearbeiten</a>
+		<a class="switch" gumby-trigger="#confirm-deletion" href="#">Löschen</a>
+	</div>-->
+
+	<!-- if you are not allowed to delete -->
+	<div class="one buttons">
+		<a href="/">Bearbeiten</a>
+	</div>
+
+	<div class="detail-table">
+		<div class="entry">
+			<div class="key">Vorname:</div>
+			<div class="value">__firstname__</div>
+		</div>
+		<div class="entry">
+			<div class="key">Nachname:</div>
+			<div class="value">__lastname__</div>
+		</div>
+		<div class="entry">
+			<div class="key">eMail:</div>
+			<div class="value">__email__</div>
+		</div>
+		<div class="entry">
+			<div class="key">Telefon:</div>
+			<div class="value">__tele__</div>
+		</div>
+		<div class="entry">
+			<div class="key">Geburtstag:</div>
+			<div class="value">__birthday__</div>
+		</div>
+		<div class="entry">
+			<div class="key">Anschrift:</div>
+			<div class="value">
+				__street__ <br>
+				__town__
+			</div>
+		</div>
+		<div class="entry">
+			<div class="key">Sonstiges:</div>
+			<div class="value">__misc__</div>
+		</div>
+		<div class="entry">
+			<div class="key"> QR:</div>
+			<div class="value">
+				<div class="qr toggle">
+					<img src="http://dummyimage.com/100x100/000000/fff.png&text=QR">
+					<span>[Click to enlarge]</span>
+				</div>
+			</div>
+		</div>
+		<div class="entry">
+			<div class="key">Tags:</div>
+			<div class="value">__Tag1__, __Tag2__, __Tag3__, __Tag4__, __Tag5__</div>
+		</div>
+	</div>
+
+	<!-- this is a default gumby modal template -> maybe you want some abstraction -->
+	<div class="modal" id="confirm-deletion">
+		<div class="content">
+			<a class="close switch" gumby-trigger="|#confirm-deletion"><i class="icon-cancel" /></i></a>
+			<div class="row">
+				<div class="ten columns centered text-center">
+					<h2>Sicher?</h2>
+					<p>Möchtest du <b>__getränkname__</b> wirklich unwiderruflich löschen?</p>
+					<p class="button">
+						<a href="/" class="switch" gumby-trigger="|#confirm-deletion">Löschen!</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Protokolle</h1>
+
+	<div class="two buttons">
+		<a href="/">Neues Protokoll anlegen</a>
+		<a href="/">Neues VV-Protokoll anlegen</a>
+	</div>
+
+	<div class="list-table-head"><h2>Nicht Veröffentlicht</h2></div>
+	<div class="list-table">
+		<div class="thead">
+			<div class="tr">
+				<div class="th w-25  left">Sitzung</div>
+				<div class="th w-25  center">Protokollant</div>
+				<div class="th w-25  center">Leitung</div>
+				<div class="th w-25  center">Entwurf</div>
+			</div>
+		</div>
+		<div class="tbody">
+			<a href="/" class="tr">
+				<div class="td w-25 left">dd.mm.yyyy</div>
+				<div class="td w-25 center">Hans Wurst</div>
+				<div class="td w-25 center">Dieter Karl Ulli</div>
+				<div class="td w-25 center">-</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-25 left">dd.mm.yyyy</div>
+				<div class="td w-25 center">Hans Wurst</div>
+				<div class="td w-25 center">Dieter Karl Ulli</div>
+				<div class="td w-25 center">dd.mm.yyyy</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="list-table-head"><h2>Veröffentlicht</h2></div>
+	<div class="list-table">
+		<div class="thead">
+			<div class="tr">
+				<div class="th w-25  left">Sitzung</div>
+				<div class="th w-25  center">Protokollant</div>
+				<div class="th w-25  center">Leitung</div>
+				<div class="th w-25  center">Veröffentlichung</div>
+			</div>
+		</div>
+		<div class="tbody">
+			<a href="/" class="tr">
+				<div class="td w-25 left">dd.mm.yyyy</div>
+				<div class="td w-25 center">Hans Wurst</div>
+				<div class="td w-25 center">Dieter Karl Ulli</div>
+				<div class="td w-25 center">dd.mm.yyyy</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-25 left">dd.mm.yyyy</div>
+				<div class="td w-25 center">Hans Wurst</div>
+				<div class="td w-25 center">Dieter Karl Ulli</div>
+				<div class="td w-25 center">dd.mm.yyyy</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="list-table-head"><h2>Genehmigt</h2></div>
+	<div class="list-table">
+		<div class="thead">
+			<div class="tr">
+				<div class="th w-25  left">Sitzung</div>
+				<div class="th w-25  center">Protokollant</div>
+				<div class="th w-25  center">Leitung</div>
+				<div class="th w-25  center">Genehmigung</div>
+			</div>
+		</div>
+		<div class="tbody">
+			<a href="/" class="tr">
+				<div class="td w-25 left">dd.mm.yyyy</div>
+				<div class="td w-25 center">Hans Wurst</div>
+				<div class="td w-25 center">Dieter Karl Ulli</div>
+				<div class="td w-25 center">dd.mm.yyyy</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-25 left">dd.mm.yyyy</div>
+				<div class="td w-25 center">Hans Wurst</div>
+				<div class="td w-25 center">Dieter Karl Ulli</div>
+				<div class="td w-25 center">dd.mm.yyyy</div>
+			</a>
+		</div>
+	</div>
+{% endblock content %}

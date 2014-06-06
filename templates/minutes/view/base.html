@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Protokoll vom DD.MM.YYYY</h1>
+
+	<div class="two buttons">
+		<a class="switch" gumby-trigger="#draftcon" href="#">Entwurf versenden</a>
+		<a class="switch" gumby-trigger="#publishcon" href="#">Protokoll veröffentlichen</a>
+	</div>
+
+	{% include 'minutes/view/meta.html' %}
+	{% include 'minutes/view/toplist.html' %}
+
+	{% for id in range(4) %}
+		{% include 'minutes/view/topic.html' %}
+	{% endfor %}
+
+	{% include 'minutes/view/modals.html' %}
+{% endblock content %}

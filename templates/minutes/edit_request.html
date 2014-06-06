@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block extra_js %}
+<script src="/static/js/selectize.min.js"></script>
+<script src="/static/js/selectnice.js"></script>
+<script type="text/javascript">
+	$("#__from__").selectnice("single", {}, {create: true});
+</script>
+{% endblock extra_js %}
+
+{% block content %}
+	<h1>Antrag bearbeiten</h1>
+
+	<form class="panel" action="/">
+		<div class="field">
+			<label for="__from__">Antragsteller</label>
+			<div class="nested">
+				<select id="__from__">
+					<option></option>
+					<option value="Wassily">Wassily Kandinsky</option>
+					<option value="Wilhelm">Wilhelm Wagenfeld</option>
+					<option value="T">T. Lux Feininger</option>
+					<option value="Marcel">Marcel Breuer</option>
+					<option value="Walter">Walter Gropius</option>
+					<option value="Paul">Paul Klee</option>
+					<option value="Mies">Mies van der Rohe</option>
+				</select>
+			</div>
+		</div>
+		<div class="field">
+			<label for="__howmuch__">Betrag <span style="text-decoration:underline">in Cent</span></label>
+			<input id="__howmuch__" type="text" placeholder="nur für Finanzanträge" />
+		</div>
+		<div class="field">
+			<label for="__description__">Beschreibung</label>
+			<textarea id="__description__" type="text"></textarea>
+		</div>
+		<div class="field">
+			<label for="__accepted__">Angenommen</label>
+			<div class="slider">
+				<label for="__accepted__" onclick="">
+					<input id="__accepted__" type="checkbox">
+					<a></a><div>Nein</div><div>Ja</div>
+				</label>
+			</div>
+		</div>
+		<div class="triple field">
+			<label for="__vote_yes__">Abstimmung</label>
+			<input id="__vote_yes__" type="text" placeholder="dafür" />
+			<input id="__vote_no__" type="text" placeholder="dagegen" />
+			<input id="__vote_wayne__" type="text" placeholder="enthalten" />
+		</div>
+		<input class="button" type="submit" value="Änderung übernehmen" />
+	</form>
+{% endblock content %}

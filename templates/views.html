@@ -1,0 +1,101 @@
+<!doctype html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>viewOVERview</title>
+
+		<style>
+			body { font-size: 13pt; font-family: sans-serif; line-height: 1.4em; }
+			a { text-decoration: none; color: bule; }
+			a:visited { color: blue; }
+			a:hover { color: red; text-decoration: underline; }
+			a.todo { text-decoration: line-through; }
+			i.custom, i.form, i.list, i.detail, i.select, i.tags, i.livesearch, i.multiple {
+				font-style: normal;
+				display: inline-block;
+				background: grey;
+				padding: 0px 4px;
+				line-height: 1.2em;
+				margin-right: 10px;
+			}
+			i.custom:before { content: "custom"; }
+			i.custom { background: #F012BE; }
+			i.form:before { content: "form"; }
+			i.form { background: #39CCCC; }
+			i.list:before { content: "tablelist"; }
+			i.list { background: #2ECC40; }
+			i.detail:before { content: "detailtable"; }
+			i.detail { background: #FFDC00; }
+			i.select:before { content: "select"; }
+			i.tags:before { content: "tags"; }
+			i.livesearch:before { content: "livesearch"; }
+			i.multiple:before { content: "multiple"; }
+			i.select, i.tags, i.livesearch, i.multiple { background: #FF851B; }
+		</style>
+	</head>
+
+	<body>
+		<h3>Views</h3>
+		<ul>
+			<li><i class="custom"></i><a target="new" href="/login">Login</a></li>
+			<li><i class="custom"></i><a target="new" href="/landingpage">Landing Page</a></li>
+			<li><i class="form"></i><i class="tags"></i><a target="new" href="/profile">Profil bearbeiten</a></li>
+			<li><b>Adressen</b></li>
+			<ul>
+				<li><i class="list"></i><i class="livesearch"></i><a target="new" href="/addr/list">Liste (alle Einträge)</a></li>
+				<li><i class="detail"></i><a target="new" href="/addr/details">Detailansicht (ein Eintrag)</a></li>
+				<li><i class="form"></i><i class="tags"></i><a target="new" href="/profile">Eintrag bearbeiten &rarr; siehe "Profil bearbeiten"</a></li>
+				<li><i class="form"></i><i class="tags"></i><a target="new" href="/profile">Eintrag hinzufügen &rarr; siehe "Profil bearbeiten"</a></li>
+			</ul>
+			<li><b>Getränke</b></li>
+			<ul>
+				<li><i class="list"></i><a target="new" href="/bev/own_bills">eigenen Rechnungen (aktuell, offen, bezahlt)</a></li>
+				<li><i class="list"></i><a target="new" href="/bev/own_bills_ref">eigenen Rechnungen (Getränkereferent, aktuell, offen, bezahlt)</a></li>
+				<li><i class="list"></i><i class="livesearch"></i><a target="new" href="/bev/item_list">Getränkeliste (alle Getränke)</a></li>
+				<li><i class="list"></i><i class="livesearch"></i><a target="new" href="/bev/all_bills">offene Rechnungen (alle offenen)</a></li>
+				<li><i class="list"></i><i class="livesearch"></i><a target="new" href="/bev/all_current_bills">laufende Rechnungen (alle laufenden)</a></li>
+				<!-- <li><i class="custom"></i><i class="select"></i><a class="todo" target="new" href="/">Strichliste</a></li> -->
+				<li><i class="list"></i><a target="new" href="/bev/bill_details_item">Rechnungsdetails (Produktbasiert)</a></li>
+				<li><i class="list"></i><a target="new" href="/bev/bill_details_time">Rechnungsdetails (Datumsbasiert)</a></li>
+				<li><i class="detail"></i><a target="new" href="/bev/details_item">Getränkedetails</a></li>
+				<li><i class="form"></i><a target="new" href="/bev/edit_item">Getränk bearbeiten</a></li>
+				<li><i class="form"></i><a target="new" href="/">Getränk hinzufügen &rarr; siehe "Getränk bearbeiten"</a></li>
+				<li><i class="form"></i><a target="new" href="/bev/edit_bill">Rechnung bearbeiten</a></li>
+			</ul>
+			<li><b>Protokoll</b></li>
+			<ul>
+				<li><i class="list"></i><a target="new" href="/min/list_v1">Liste (alle Protokolle, Version 1)</a></li>
+				<li><i class="list"></i><a target="new" href="/min/list_v2">Liste (alle Protokolle, Version 2)</a></li>
+				<li><i class="form"></i><i class="select"></i><i class="multiple"></i><a target="new" href="/min/edit_meta">Protokoll hinzufügen &rarr; siehe "Protokoll Meta bearbeiten</a></li>
+				<li><i class="form"></i><i class="select"></i><i class="multiple"></i><a target="new" href="/min/edit_meta">Protokoll Meta bearbeiten</a></li>
+				<li><i class="form"></i><i class="select"></i><i class="tags"></i><a target="new" href="/min/edit_vv_meta">VV Protokoll hinzufügen &rarr; siehe "VV Protokoll Meta bearbeiten"</a></li>
+				<li><i class="form"></i><i class="select"></i><i class="tags"></i><a target="new" href="/min/edit_vv_meta">VV Protokoll Meta bearbeiten</a></li>
+				<li><i class="custom"></i><a target="new" href="/min/view">Protokoll ansehen</a></li>
+				<li><i class="custom"></i><i class="select"></i><a target="new" href="/min/edit_top">TOP hinzufügen &rarr; siehe "TOP bearbeiten"</a></li>
+				<li><i class="custom"></i><i class="select"></i><a target="new" href="/min/edit_top">TOP bearbeiten</a></li>
+				<li><i class="form"></i><i class="select"></i><a target="new" href="/min/edit_request">Antrag hinzufügen &rarr; siehe "Antrag bearbeiten"</a></li>
+				<li><i class="form"></i><i class="select"></i><a target="new" href="/min/edit_request">Antrag bearbeiten</a></li>
+				<!-- <li><i class="form"></i><a class="todo" target="new" href="/">Abstimmung hinzufügen?</a></li> -->
+				<!-- <li><i class="form"></i><a class="todo" target="new" href="/">Abstimmung bearbeiten?</a></li> -->
+			</ul>
+			<li><b>NicerDicerSelectizer Test</b></li>
+			<ul>
+				<li><i class="select"></i><a target="new" href="/selecttest/single">select</a></li>
+				<li><i class="multiple"></i><a target="new" href="/selecttest/multiple">multiple</a></li>
+				<li><i class="tags"></i><a target="new" href="/selecttest/tags">tags</a></li>
+				<li><i class="livesearch"></i><a target="new" href="/selecttest/live">livesearch</a></li>
+			</ul>
+		</ul>
+
+		<h3>ToDos:</h3>
+		<ul>
+			<li>Mail Templates</li>
+		</ul>
+
+		<h3>Notes:</h3>
+		<ul>
+			<li>.hide-small, .hide-medium should be added to .table-list views in production to have proper use cases and behaviours</li>
+		</ul>
+	</body>
+</html>

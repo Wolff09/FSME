@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Rechnung bearbeiten</h1>
+
+	<form class="panel" action="/">
+		<div class="field">
+			<label for="__item0__">Mate</label>
+			<input id="__item0__" type="text">
+		</div>
+		<div class="field">
+			<label for="__item1__">Grüne Mate</label>
+			<input id="__item1__" type="text">
+		</div>
+		<div class="field">
+			<label for="__item2__">Schwarze Mate</label>
+			<input id="__item2__" type="text">
+		</div>
+		<div class="field">
+			<label for="__item3__">Gute Mate</label>
+			<input id="__item3__" type="text">
+		</div>
+		<div class="field">
+			<label for="__item4__">Gute Mate</label>
+			<input id="__item4__" type="text">
+		</div>
+		<input class="button" type="submit" value="Änderungen übernehmen">
+	</form>
+{% endblock content %}

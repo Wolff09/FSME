@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block extra_js %}
+<!-- Bower install selectize -->
+<script src="/static/js/selectize.min.js"></script>
+<script src="/static/js/selectnice.js"></script>
+<script type="text/javascript">
+	$('#__writer__').selectnice("single", {}, {create: true});
+	$('#__leader__').selectnice("single");
+	$('#__attended__').selectnice("tags");
+</script>
+{% endblock extra_js %}
+
+{% block content %}
+	<h1>VV Protokoll bearbeiten</h1>
+
+	<form class="panel">
+		<div class="field">
+			<label for="__date__">Sitzungsdatum</label>
+			<input id="__date__" type="date" />
+		</div>
+		<div class="field">
+			<label for="__writer__">Protokollant</label>
+			<div class="nested">
+				<select id="__writer__">
+					<option></option>
+					<option value="Wassily">Wassily Kandinsky</option>
+					<option value="Wilhelm">Wilhelm Wagenfeld</option>
+					<option value="T">T. Lux Feininger</option>
+					<option value="Marcel">Marcel Breuer</option>
+					<option value="Walter">Walter Gropius</option>
+					<option value="Paul">Paul Klee</option>
+					<option value="Mies">Mies van der Rohe</option>
+				</select>
+			</div>
+		</div>
+		<div class="field">
+			<label for="__leader__">Sitzungsleitung</label>
+			<div class="nested">
+				<select id="__leader__">
+					<option></option>
+					<option value="Wassily">Wassily Kandinsky</option>
+					<option value="Wilhelm">Wilhelm Wagenfeld</option>
+					<option value="T">T. Lux Feininger</option>
+					<option value="Marcel">Marcel Breuer</option>
+					<option value="Walter">Walter Gropius</option>
+					<option value="Paul">Paul Klee</option>
+					<option value="Mies">Mies van der Rohe</option>
+				</select>
+			</div>
+		</div>
+		<div class="field">
+			<label for="__attended__">Anwesenheit</label>
+			<div class="nested">
+				<input id="__attended__" type="text" />
+			</div>
+		</div>
+		<input class="button" value="Änderungen übernehmen" type="submit">
+	</form>
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block extra_js %}
+<!-- Bower install selectize -->
+<script src="/static/js/selectize.min.js"></script>
+<script src="/static/js/selectnice.js"></script>
+<script type="text/javascript">
+	$("#singleselect").selectnice("single");
+</script>
+{% endblock extra_js %}
+
+
+{% block content %}
+	<h1>&lt;select&gt;</h1>
+
+	<form class="panel">
+		<div class="field" style="overflow: visible">
+			<label for="singleselect">Single Select</label>
+			<div class="nested">
+				<select id="singleselect">
+					<option value="__user_1__">Wassily Kandinsky</option>
+					<option value="__user_2__">Wilhelm Wagenfeld</option>
+					<option value="__user_3__">T. Lux Feininger</option>
+					<option value="__user_4__">Marcel Breuer</option>
+					<option value="__user_5__">Walter Gropius</option>
+					<option value="__user_6__">Paul Klee</option>
+					<option value="__user_7__">Mies van der Rohe</option>
+				</select>
+			</div>
+		</div>
+		<div class="field">
+			<label>label</label>
+			<input>
+		</div>
+		<br><br><br><br><br><br><br><br><br><br><br><br>
+	</form>
+{% endblock content %}

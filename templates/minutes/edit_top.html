@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block extra_js %}
+<script src="/static/js/selectize.min.js"></script>
+<script src="/static/js/selectnice.js"></script>
+<script type="text/javascript">
+	$("#position").selectnice("single");
+</script>
+
+<script src="/static/js/redactor_de.js"></script>
+<script src="/static/js/redactor.min.js"></script>
+<script type="text/javascript">
+	$('.redactor').redactor({
+		lang: 'de',
+		autoresize: false,
+		minHeight: 400,
+		buttons: ['bold', 'italic', 'underline', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent'],
+	});
+</script>
+{% endblock extra_js %}
+
+{% block content %}
+		<h1>TOP bearbeiten</h1>
+		<form class="panel">
+			<div class="field">
+				<label for="__title__">Titel</label>
+				<input id="__title__" type="text" />
+			</div>
+			<div class="field">
+				<label for="position">Positionieren nach</label>
+				<div class="nested">
+					<select id="position">
+						<option></option>
+						<option value="0">TOP1: Protokolle</option>
+						<option value="1">TOP2: Mitteilungen</option>
+						<option value="2">TOP3: Berichte</option>
+						<option value="4">TOP4: Willkommen im Busch</option>
+						<option value="5">TOP5: Technotag</option>
+						<option value="6">TOP6: Anträge</option>
+						<option value="7">TOP7: Verschiedenes</option>
+					</select>
+				</div>
+			</div>
+			<textarea class="redactor"></textarea>
+			<input class="button edit" type="submit" value="Änderung übernehmen" />
+		</form>
+{% endblock content %}

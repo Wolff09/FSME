@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Meine Rechnungen</h1>
+
+	<div class="list-table-head">
+		<h2>Laufende Rechnung</h2>
+	</div>
+	<div class="panel">
+		<p>Abstinent? Du hast nichts auf der laufenden Rechnung.</p>
+	</div>
+
+	<div class="list-table-head">
+		<h2>Offene Rechnungen</h2>
+	</div>
+	<div class="list-table">
+		<div class="thead">
+			<div class="tr">
+				<div class="th w-40">Gesamt</div>
+				<div class="th w-40 right"></div>
+				<div class="th w-20">345€</div>
+			</div>
+		</div>
+		<div class="tbody">
+			<a href="/" class="tr">
+				<div class="td w-40">22. August 2013</div>
+				<div class="td w-40 right"></div>
+				<div class="td w-20">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-40">17. Juli 2012</div>
+				<div class="td w-40 right">
+					<span class="label payed" title="Von dir als bezahlt markiert - muss noch vom Getränkereferent bestätigt werden.">bezahlt</span>
+				</div>
+				<div class="td w-20">77€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-40">17. Juli 1998</div>
+				<div class="td w-40 right"></div>
+				<div class="td w-20">77DM</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="list-table-head">
+		<h2>Bezahlte Rechnungen</h2>
+	</div>
+	<div class="list-table">
+		<div class="thead">
+			<div class="tr">
+				<div class="th w-50">Gesamt</div>
+				<div class="th w-50">2489DM</div>
+			</div>
+		</div>
+		<div class="tbody">
+			<a href="/" class="tr">
+				<div class="td w-50">22. August 1995</div>
+				<div class="td w-50">687DM</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-50">17. Juli 1995</div>
+				<div class="td w-50">435DM</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-50">17. Juli 1994</div>
+				<div class="td w-50">345DM</div>
+			</a>
+		</div>
+	</div>
+{% endblock content %}

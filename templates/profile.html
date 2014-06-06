@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block extra_js %}
+<script src="/static/js/selectize.min.js"></script>
+<script src="/static/js/selectnice.js"></script>
+<script type="text/javascript">
+	$('#__tags__').selectnice("tags", {
+		tags: ["Student", "Professor", "Verwaltung", "Fachschaft"]
+	});
+</script>
+{% endblock extra_js %}
+
+{% block content %}
+	<h1>Profil bearbeiten</h1>
+
+	<form class="panel" action="/">
+		<div class="field">
+			<label for="__firstname__">Vorname</label>
+			<input id="__firstname__" type="text">
+		</div>
+		<div class="field">
+			<label for="__lastname__">Nachname</label>
+			<input id="__lastname__" type="text">
+		</div>
+		<div class="field">
+			<label for="__mail__">eMail</label>
+			<input id="__mail__" type="text">
+		</div>
+		<div class="field">
+			<label for="__phone__">Telefon</label>
+			<input id="__phone__" type="text">
+		</div>
+		<div class="field">
+			<label for="__birth__">Geburtstag</label>
+			<input id="__birth__" type="text">
+		</div>
+		<div class="field">
+			<label for="__addr__">Anschrift</label>
+			<input id="__addr__" type="text">
+		</div>
+		<div class="field">
+			<label for="__stuff__">Sonstiges</label>
+			<textarea id__="__stuff"></textarea>
+		</div>
+		<div class="field">
+			<label for="__tags__">Tags</label>
+			<div class="nested">
+				<input id="__tags__" type="text">
+			</div>
+		</div>
+		<input class="button" type="submit" value="Änderungen übernehmen">
+	</form>
+{% endblock content %}

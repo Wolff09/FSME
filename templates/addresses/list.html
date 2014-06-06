@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block extra_js %}
+<script src="/static/js/selectize.min.js"></script>
+<script src="/static/js/selectnice.js"></script>
+<script type="text/javascript">
+	$('#livesearch').selectnice("live", {
+		tags: ["Fachschaft", "Student", "Verwaltung", "Professor"],
+		objs: ".list-table .tbody .tr"
+	});
+</script>
+{% endblock extra_js %}
+
+{% block content %}
+	<h1>Adressbuch</h1>
+
+	<div class="one buttons">
+		<a href="/">Kontakt hinzufügen</a>
+	</div>
+
+	<div class="live"><input id="livesearch"></div>
+
+	<div class="list-table">
+		<div class="thead">
+			<div class="tr">
+				<div class="th w-25">Vorname</div>
+				<div class="th w-25">Nachname</div>
+				<div class="th w-20 hide-medium">Telefon</div>
+				<div class="th w-30 hide-small">eMail</div>
+			</div>
+		</div>
+		<div class="tbody">
+			<a class="tr" href="#">
+				<div class="hide">Student, Fachschaft</div>
+				<div class="td w-25">Deine</div>
+				<div class="td w-25">Mutter SF</div>
+				<div class="td w-20 hide-medium">77-555-Nasenbär</div>
+				<div class="td w-30 hide-small">stinkt@fisch</div>
+			</a>
+			<a class="tr" href="#">
+				<div class="hide">Professor</div>
+				<div class="td w-25">Eine</div>
+				<div class="td w-25">Mutter P</div>
+				<div class="td w-20 hide-medium">77-555-Nasenbär</div>
+				<div class="td w-30 hide-small">stinkt@fisch</div>
+			</a>
+			<a class="tr" href="#">
+				<div class="hide">Verwaltung</div>
+				<div class="td w-25">Keine</div>
+				<div class="td w-25">Mutter V</div>
+				<div class="td w-20 hide-medium">77-555-Nasenbär</div>
+				<div class="td w-30 hide-small">stinkt@fisch</div>
+			</a>
+			<a class="tr" href="#">
+				<div class="hide">Student</div>
+				<div class="td w-25">Deine</div>
+				<div class="td w-25">Mutter S</div>
+				<div class="td w-20 hide-medium">77-555-Nasenbär</div>
+				<div class="td w-30 hide-small">stinkt@fisch</div>
+			</a>
+			<a class="tr" href="#">
+				<div class="td w-25">Nix</div>
+				<div class="td w-25">Mutter</div>
+				<div class="td w-20 hide-medium">77-555-Nasenbär</div>
+				<div class="td w-30 hide-small">stinkt@fisch</div>
+			</a>
+		</div>
+	</div>
+{% endblock content %}

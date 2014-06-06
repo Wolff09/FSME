@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Getränk bearbeiten</h1>
+
+	<form class="panel" action="/">
+		<div class="field">
+			<label for="__name__">Name</label>
+			<input id="__name__" type="text">
+		</div>
+		<div class="field">
+			<label for="__description__">Beschreibung</label>
+			<input id="__description__" type="text">
+		</div>
+		<div class="field">
+			<label for="__amount__">Inhalt</label>
+			<input id="__amount__" type="text">
+		</div>
+		<div class="field">
+			<label for="__doshi__">Preis intern</label>
+			<input id="__doshi__" type="text">
+		</div>
+		<div class="field">
+			<label for="__doshe__">Preis extern</label>
+			<input id="__doshe__" type="text">
+		</div>
+		<div class="field">
+			<label for="__available__">Verfügbar</label>
+			<div class="slider">
+				<label for="__available__" onclick="">
+					<input id="__available__" type="checkbox">
+					<a></a><div>Nein</div><div>Ja</div>
+				</label>
+			</div>
+		</div>
+		<div class="field">
+			<!-- TODO: upload -->
+			<label for="__image__">Logo</label>
+			<div class="nested">
+				<input id="__image__" type="file">
+			</div>
+		</div>
+		<input class="button" type="submit" value="Änderungen übernehmen">
+	</form>
+{% endblock content %}

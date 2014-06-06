@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block main %}
+	<div id="login">
+		<form action="/">
+			<h1>Login</h1>
+			<div class="field">
+				<label for="__username__">Benutzername</label>
+				<input id="__username__" type="text">
+			</div>
+			<div class="field">
+				<label for="__password__">Passwort</label>
+				<input id="__password__" type="password">
+			</div>
+			<input class="button" type="submit" value="Einloggen">
+		</form>
+	</div>
+{% endblock main %}

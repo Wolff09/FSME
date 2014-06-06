@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% block extra_js %}
+<!-- Bower install selectize -->
+<script src="/static/js/selectize.min.js"></script>
+<script src="/static/js/selectnice.js"></script>
+<script type="text/javascript">
+	$('#livesearch').selectnice("live", {
+		tags: ["Hans Wurs", "Dieter Wurs", "Werner Wurs"],
+		objs: ".list-table .tbody .tr"
+	});
+</script>
+{% endblock extra_js %}
+
+{% block content %}
+	<h1>Alle laufenden Rechnungen</h1>
+
+	<div class="live"><input id="livesearch"></div>
+
+	<div class="list-table">
+		<div class="thead">
+			<div class="tr">
+				<div class="th w-60">Name</div>
+				<div class="th w-30 center">Datum</div>
+				<div class="th w-10">9001€</div>
+			</div>
+		</div>
+		<div class="tbody">
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+			<a href="/" class="tr">
+				<div class="td w-60">Hans Wurs</div>
+				<div class="td w-30 center">dd.mm.yy</div>
+				<div class="td w-10">23€</div>
+			</a>
+		</div>
+	</div>
+{% endblock content %}
