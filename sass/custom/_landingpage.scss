@@ -34,15 +34,15 @@ $tile-color-four: $green !default;
 
 		h1 {
 			font-size: $reallybig;
-			@include line-and-height(height-calc($xxxlarge*1.5));
-			padding: 0;
-			padding-top: 20px;
+			@include line-and-height(height-calc($xxxlarge*1.3));
+			padding: 10px 0;
+			// padding-bottom: 20px;
 		}
 
 		h3 {
 			font-size: $xlarge;
 			// @include line-and-height(height-calc($xlarge));
-			height: height-calc($xlarge);
+			height: height-calc($xlarge*1.1);
 			vertical-align: top;
 			padding: 0;
 		}
