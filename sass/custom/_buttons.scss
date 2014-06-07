@@ -30,6 +30,7 @@
 			@include column(12/$num);
 			@include respond(all-phones) {
 				margin-top: $small-spacing;
+				&:first-child { margin-top: 0; }
 			}
 		}
 	}	
