@@ -53,7 +53,13 @@
 	& > input, & > textarea, & > .nested {
 		@include column(9);
 	}
-	&.triple > input { @include column(3); }
+	&.triple > input {
+		@include column(3);
+		@include respond(all-phones) {
+			margin-top: $small-spacing;
+			&:first-of-type { margin-top: 0; }
+		}
+	}
 	& > .slider {
 		@extend .nested;
 		@include slider-checkbox;
